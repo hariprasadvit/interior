@@ -5,6 +5,8 @@ interface BHKOption {
   features: string[];
   price: string;
   image: string;
+  sqft: string;
+  ideal: string;
 }
 
 interface BHKSelectionProps {
@@ -20,7 +22,9 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
       description: "Perfect for individuals or couples",
       features: ["1 Bedroom", "Living Room", "Kitchen", "1 Bathroom", "Balcony"],
       price: "₹8-15 Lakhs",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop&auto=enhance"
+      sqft: "450-650 sq ft",
+      ideal: "Singles & Couples",
+      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
     },
     {
       type: "2BHK",
@@ -28,7 +32,9 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
       description: "Ideal for small families",
       features: ["2 Bedrooms", "Living Room", "Kitchen", "2 Bathrooms", "Balcony"],
       price: "₹15-30 Lakhs",
-      image: "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=400&h=300&fit=crop&auto=enhance"
+      sqft: "650-950 sq ft",
+      ideal: "Small Families",
+      image: "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
     },
     {
       type: "3BHK",
@@ -36,19 +42,21 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
       description: "Spacious home for larger families",
       features: ["3 Bedrooms", "Living Room", "Kitchen", "3 Bathrooms", "2 Balconies"],
       price: "₹25-50 Lakhs",
-      image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=400&h=300&fit=crop&auto=enhance"
+      sqft: "950-1300 sq ft",
+      ideal: "Large Families",
+      image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-brand-text mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-brand-text mb-6 leading-tight">
             Choose Your Home Size
           </h1>
-          <p className="text-xl text-brand-muted max-w-3xl mx-auto">
+          <p className="text-xl text-brand-muted max-w-3xl mx-auto leading-relaxed">
             Select the apartment configuration that best fits your lifestyle and family needs
           </p>
         </div>
@@ -66,13 +74,23 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
               }`}
             >
               {/* Card Content */}
-              <div className="bg-white p-8 h-full">
+              <div className="bg-white p-8 h-full relative">
+                {/* Popular Badge for 2BHK */}
+                {option.type === "2BHK" && (
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-brand-primary to-red-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    POPULAR
+                  </div>
+                )}
+
                 {/* Image */}
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-gray-100">
                   <img
                     src={option.image}
                     alt={option.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=400&h=300&fit=crop";
+                    }}
                   />
                 </div>
 
@@ -81,13 +99,25 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-2xl font-bold text-brand-text">{option.title}</h3>
                     {selected === option.type && (
-                      <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center shadow-lg">
                         <span className="text-white text-sm">✓</span>
                       </div>
                     )}
                   </div>
                   
                   <p className="text-brand-muted mb-4">{option.description}</p>
+                  
+                  {/* Quick Info */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <p className="text-xs text-brand-muted">Area</p>
+                      <p className="text-sm font-semibold text-brand-text">{option.sqft}</p>
+                    </div>
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <p className="text-xs text-brand-muted">Ideal for</p>
+                      <p className="text-sm font-semibold text-brand-text">{option.ideal}</p>
+                    </div>
+                  </div>
                   
                   {/* Features */}
                   <div className="space-y-2 mb-6">
@@ -100,9 +130,18 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
                   </div>
 
                   {/* Price */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-brand-primary">{option.price}</span>
-                    <span className="text-sm text-brand-muted">Estimated range</span>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div>
+                      <span className="text-lg font-bold text-brand-primary">{option.price}</span>
+                      <p className="text-xs text-brand-muted">Estimated range</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-brand-muted">Starting from</p>
+                      <p className="text-sm font-semibold text-brand-text">
+                        ₹{Math.floor(parseInt(option.price.split('-')[0].replace(/[^\d]/g, '')) / parseInt(option.sqft.split('-')[0]))}
+                        <span className="text-xs">/sq ft</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -120,21 +159,24 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
 
         {/* Selection Info */}
         {selected && (
-          <div className="text-center bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🏠</span>
+          <div className="text-center bg-white rounded-3xl p-8 shadow-lg max-w-2xl mx-auto border border-gray-100">
+            <div className="flex items-center justify-center space-x-3 mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <span className="text-3xl">🏠</span>
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-brand-text">
+              <div className="text-left">
+                <h3 className="text-2xl font-bold text-brand-text">
                   {bhkOptions.find(opt => opt.type === selected)?.title} Selected
                 </h3>
                 <p className="text-brand-muted">Ready to choose your design style</p>
               </div>
             </div>
-            <p className="text-sm text-brand-muted">
-              All design options and previews will be customized for your {selected} apartment layout
-            </p>
+            
+            <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+              <p className="text-sm text-blue-800 leading-relaxed">
+                🎨 All design options and room previews will be customized specifically for your <strong>{selected}</strong> apartment layout
+              </p>
+            </div>
           </div>
         )}
       </div>
