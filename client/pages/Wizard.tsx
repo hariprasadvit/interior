@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { ProgressSteps } from "../components/ProgressSteps";
 import { OptionGrid } from "../components/OptionGrid";
 import { MaterialPicker } from "../components/MaterialPicker";
+import { RoomPreview } from "../components/RoomPreview";
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 import { Upload, FileText, CheckCircle } from "lucide-react";
@@ -10,9 +11,9 @@ import { Upload, FileText, CheckCircle } from "lucide-react";
 interface WizardState {
   step: number;
   theme: string;
-  living: { tile: string; paint: string };
-  kitchen: { slab: string; tile: string; sink: string };
-  bedroom: { flooring: string; paint: string; wardrobe: string; lighting: string };
+  living: { tile: string; paint: string; furniture: string; carpet: string };
+  kitchen: { slab: string; wallTile: string; doorKnob: string; sink: string };
+  bedroom: { flooring: string; bedroomPaint: string; wardrobe: string; lighting: string; bed: string };
   floorPlanUrl: string;
   quote: { living: number; kitchen: number; bedroom: number; total: number };
 }
@@ -24,9 +25,9 @@ export default function Wizard() {
   const [state, setState] = useState<WizardState>({
     step: parseInt(searchParams.get("step") || "1"),
     theme: "",
-    living: { tile: "", paint: "" },
-    kitchen: { slab: "", tile: "", sink: "" },
-    bedroom: { flooring: "", paint: "", wardrobe: "", lighting: "" },
+    living: { tile: "", paint: "", furniture: "", carpet: "" },
+    kitchen: { slab: "", wallTile: "", doorKnob: "", sink: "" },
+    bedroom: { flooring: "", bedroomPaint: "", wardrobe: "", lighting: "", bed: "" },
     floorPlanUrl: "",
     quote: { living: 0, kitchen: 0, bedroom: 0, total: 0 }
   });
@@ -56,47 +57,30 @@ export default function Wizard() {
     }
   ];
 
+  // Enhanced Living Room Fields
   const livingFields = [
-    { name: "tile", label: "Tile Style", options: ["Matte Porcelain", "Glossy Ceramic", "Textured Stone"] },
-    { name: "paint", label: "Paint Color", options: ["Warm White", "Greige", "Soft Beige", "Cool Grey"] }
+    { name: "tile", label: "Floor Tile Style", options: ["Matte Porcelain", "Glossy Ceramic", "Textured Stone"], type: "material" as const },
+    { name: "paint", label: "Wall Paint Color", options: ["Warm White", "Greige", "Soft Beige", "Cool Grey"], type: "color" as const },
+    { name: "furniture", label: "Seating Furniture", options: ["Modern Sofa", "Classic Sofa", "Sectional"], type: "style" as const },
+    { name: "carpet", label: "Area Carpet", options: ["Persian Rug", "Modern Geometric", "Solid Color"], type: "style" as const }
   ];
 
+  // Enhanced Kitchen Fields
   const kitchenFields = [
-    { name: "slab", label: "Countertop / Slab", options: ["Granite Black", "Quartz White", "Marble Carrara"] },
-    { name: "tile", label: "Wall Tile", options: ["Subway Gloss", "Hex Matte", "Patterned Porcelain"] },
-    { name: "sink", label: "Sink Style", options: ["Single Bowl", "Double Bowl", "Farmhouse"] }
+    { name: "slab", label: "Countertop Slab", options: ["Granite Black", "Quartz White", "Marble Carrara"], type: "material" as const },
+    { name: "wallTile", label: "Wall Tile", options: ["Subway Gloss", "Hex Matte", "Patterned Porcelain"], type: "material" as const },
+    { name: "doorKnob", label: "Cabinet Hardware", options: ["Modern Handle", "Classic Knob", "Brushed Steel"], type: "style" as const },
+    { name: "sink", label: "Sink Style", options: ["Single Bowl", "Double Bowl", "Farmhouse"], type: "style" as const }
   ];
 
+  // Enhanced Bedroom Fields
   const bedroomFields = [
-    { name: "flooring", label: "Flooring", options: ["Wood Laminate", "Vitrified Tile", "Engineered Wood"] },
-    { name: "paint", label: "Wall Paint", options: ["Calming Blue", "Warm Taupe", "Ivory"] },
-    { name: "wardrobe", label: "Wardrobe Finish", options: ["Matte Laminate", "High-Gloss Laminate", "Veneer"] },
-    { name: "lighting", label: "Lighting Style", options: ["Warm Recessed", "Pendant", "Cove"] }
+    { name: "flooring", label: "Floor Material", options: ["Wood Laminate", "Vitrified Tile", "Engineered Wood"], type: "material" as const },
+    { name: "bedroomPaint", label: "Wall Paint", options: ["Calming Blue", "Warm Taupe", "Ivory"], type: "color" as const },
+    { name: "wardrobe", label: "Wardrobe Finish", options: ["Matte Laminate", "High-Gloss Laminate", "Veneer"], type: "material" as const },
+    { name: "lighting", label: "Lighting Style", options: ["Warm Recessed", "Pendant", "Cove"], type: "style" as const },
+    { name: "bed", label: "Bed Type", options: ["Platform Bed", "Storage Bed", "Four Poster"], type: "style" as const }
   ];
-
-  const getRoomPreviewImage = (room: string, selections: any) => {
-    const roomImages = {
-      living: [
-        "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=500&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=500&h=400&fit=crop"
-      ],
-      kitchen: [
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=500&h=400&fit=crop"
-      ],
-      bedroom: [
-        "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=500&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=500&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=400&fit=crop"
-      ]
-    };
-    
-    // Rotate images based on selections to show variety
-    const imageIndex = Object.values(selections).filter(Boolean).length % 3;
-    return roomImages[room as keyof typeof roomImages][imageIndex];
-  };
 
   const handleThemeSelect = (theme: string) => {
     setState(prev => ({ ...prev, theme }));
@@ -136,6 +120,17 @@ export default function Wizard() {
     };
     setState(prev => ({ ...prev, quote }));
     navigate("/quote");
+  };
+
+  const isStepComplete = () => {
+    switch (state.step) {
+      case 1: return !!state.theme;
+      case 2: return state.living.tile && state.living.paint && state.living.furniture && state.living.carpet;
+      case 3: return state.kitchen.slab && state.kitchen.wallTile && state.kitchen.doorKnob && state.kitchen.sink;
+      case 4: return state.bedroom.flooring && state.bedroom.bedroomPaint && state.bedroom.wardrobe && state.bedroom.lighting && state.bedroom.bed;
+      case 5: return !!state.floorPlanUrl;
+      default: return false;
+    }
   };
 
   return (
@@ -184,31 +179,11 @@ export default function Wizard() {
               onSelectionChange={(field, value) => handleMaterialSelect("living", field, value)}
             />
             
-            <div className="sticky top-8">
-              <Card className="overflow-hidden">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-brand-text">Room Preview</CardTitle>
-                  <CardDescription>See how your selections come together</CardDescription>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="aspect-[4/3] relative">
-                    <img
-                      src={getRoomPreviewImage("living", state.living)}
-                      alt="Living room preview"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h3 className="text-xl font-bold mb-2">Living Room</h3>
-                      <div className="space-y-1 text-sm">
-                        {state.living.tile && <p>Tile: {state.living.tile}</p>}
-                        {state.living.paint && <p>Paint: {state.living.paint}</p>}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <RoomPreview
+              room="living"
+              selections={state.living}
+              title="Living Room"
+            />
 
             <div className="lg:col-span-2 flex justify-between pt-8">
               <Button variant="outline" onClick={() => handleBack(1)} className="px-8 py-3">
@@ -216,7 +191,8 @@ export default function Wizard() {
               </Button>
               <Button
                 onClick={() => handleNext(3)}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3"
+                disabled={!isStepComplete()}
+                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 disabled:opacity-50"
               >
                 Next: Kitchen Design
               </Button>
@@ -234,32 +210,11 @@ export default function Wizard() {
               onSelectionChange={(field, value) => handleMaterialSelect("kitchen", field, value)}
             />
             
-            <div className="sticky top-8">
-              <Card className="overflow-hidden">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-brand-text">Kitchen Preview</CardTitle>
-                  <CardDescription>Your dream kitchen taking shape</CardDescription>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="aspect-[4/3] relative">
-                    <img
-                      src={getRoomPreviewImage("kitchen", state.kitchen)}
-                      alt="Kitchen preview"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h3 className="text-xl font-bold mb-2">Kitchen</h3>
-                      <div className="space-y-1 text-sm">
-                        {Object.entries(state.kitchen).filter(([_, v]) => v).map(([k, v]) => (
-                          <p key={k}>{k.charAt(0).toUpperCase() + k.slice(1)}: {v}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <RoomPreview
+              room="kitchen"
+              selections={state.kitchen}
+              title="Kitchen"
+            />
 
             <div className="lg:col-span-2 flex justify-between pt-8">
               <Button variant="outline" onClick={() => handleBack(2)} className="px-8 py-3">
@@ -267,7 +222,8 @@ export default function Wizard() {
               </Button>
               <Button
                 onClick={() => handleNext(4)}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3"
+                disabled={!isStepComplete()}
+                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 disabled:opacity-50"
               >
                 Next: Bedroom Design
               </Button>
@@ -285,32 +241,11 @@ export default function Wizard() {
               onSelectionChange={(field, value) => handleMaterialSelect("bedroom", field, value)}
             />
             
-            <div className="sticky top-8">
-              <Card className="overflow-hidden">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-brand-text">Bedroom Preview</CardTitle>
-                  <CardDescription>Your perfect retreat</CardDescription>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="aspect-[4/3] relative">
-                    <img
-                      src={getRoomPreviewImage("bedroom", state.bedroom)}
-                      alt="Bedroom preview"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h3 className="text-xl font-bold mb-2">Bedroom</h3>
-                      <div className="space-y-1 text-sm">
-                        {Object.entries(state.bedroom).filter(([_, v]) => v).map(([k, v]) => (
-                          <p key={k}>{k.charAt(0).toUpperCase() + k.slice(1)}: {v}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <RoomPreview
+              room="bedroom"
+              selections={state.bedroom}
+              title="Bedroom"
+            />
 
             <div className="lg:col-span-2 flex justify-between pt-8">
               <Button variant="outline" onClick={() => handleBack(3)} className="px-8 py-3">
@@ -318,7 +253,8 @@ export default function Wizard() {
               </Button>
               <Button
                 onClick={() => handleNext(5)}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3"
+                disabled={!isStepComplete()}
+                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 disabled:opacity-50"
               >
                 Upload Floor Plan
               </Button>
