@@ -41,26 +41,26 @@ export const imageMap = {
         "Farmhouse": "https://images.unsplash.com/photo-1615874959474-d609969a20ac?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
       },
       "bedroom": {
-        // Flooring - Actual flooring images
-        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Vitrified Tile": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Engineered Wood": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        // Paint colors
-        "Calming Blue": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Warm Taupe": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Ivory": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        // Wardrobe
-        "Matte Laminate": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "High-Gloss Laminate": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Veneer": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        // Lighting
-        "Warm Recessed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Pendant": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Cove": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        // Bed types - Actual bed images
-        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Storage Bed": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Four Poster": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
+        // Flooring - Different flooring types
+        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Vitrified Tile": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Engineered Wood": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        // Paint colors - Different bedroom wall colors
+        "Calming Blue": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Warm Taupe": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Ivory": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        // Wardrobe - Different wardrobe finishes
+        "Matte Laminate": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "High-Gloss Laminate": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Veneer": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        // Lighting - Different lighting styles
+        "Warm Recessed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Pendant": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Cove": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        // Bed types - Different bed styles
+        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Storage Bed": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Four Poster": "https://images.unsplash.com/photo-1515263487990-61b07816b24f?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
       }
     },
     "Minimalist": {
