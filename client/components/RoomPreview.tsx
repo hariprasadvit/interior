@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { getRoomImage, getAvailableMaterials } from "../utils/imageMap";
-import { ImageIcon, Loader2 } from "lucide-react";
+import { ImageIcon, Loader2, RefreshCw } from "lucide-react";
 
 interface RoomPreviewProps {
   room: "living" | "kitchen" | "bedroom";
@@ -14,29 +14,79 @@ interface RoomPreviewProps {
 export function RoomPreview({ room, selections, title, bhkType, houseStyle }: RoomPreviewProps) {
   const [previewImage, setPreviewImage] = useState("");
   const [currentMaterial, setCurrentMaterial] = useState<string>("");
-  const [imageLoading, setImageLoading] = useState(true);
+  const [imageLoading, setImageLoading] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
-    // Get the most recent selection to determine the preview image
+    console.log('RoomPreview selections changed:', { room, selections, bhkType, houseStyle });
+    
+    if (!bhkType || !houseStyle) {
+      console.warn('Missing bhkType or houseStyle');
+      return;
+    }
+
+    updatePreviewImage();
+  }, [selections, room, bhkType, houseStyle]);
+
+  const updatePreviewImage = () => {
     const selectedValues = Object.values(selections).filter(Boolean);
     const lastSelection = selectedValues[selectedValues.length - 1];
+    
+    console.log('Updating preview image:', { lastSelection, selectedValues });
     
     setImageLoading(true);
     setImageError(false);
     
-    // Use getRoomImage to get image locked to BHK + style combination
-    if (lastSelection) {
-      const image = getRoomImage(bhkType, houseStyle, room, lastSelection);
-      setPreviewImage(image);
-      setCurrentMaterial(lastSelection);
-    } else {
-      // Show default image for this BHK + style + room combination
-      const image = getRoomImage(bhkType, houseStyle, room);
-      setPreviewImage(image);
-      setCurrentMaterial("");
+    try {
+      let imageUrl: string;
+      
+      if (lastSelection) {
+        imageUrl = getRoomImage(bhkType, houseStyle, room, lastSelection);
+        setCurrentMaterial(lastSelection);
+        console.log('Selected material image:', imageUrl);
+      } else {
+        imageUrl = getRoomImage(bhkType, houseStyle, room);
+        setCurrentMaterial("");
+        console.log('Default room image:', imageUrl);
+      }
+      
+      // Pre-load the image to check if it's valid
+      const img = new Image();
+      img.onload = () => {
+        console.log('Image loaded successfully:', imageUrl);
+        setPreviewImage(imageUrl);
+        setImageLoading(false);
+        setImageError(false);
+        setRetryCount(0);
+      };
+      
+      img.onerror = () => {
+        console.error('Image failed to load:', imageUrl);
+        setImageLoading(false);
+        setImageError(true);
+        
+        // Try fallback image on first error
+        if (retryCount === 0) {
+          const fallbackUrl = `https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop`;
+          setRetryCount(1);
+          img.src = fallbackUrl;
+        }
+      };
+      
+      img.src = imageUrl;
+      
+    } catch (error) {
+      console.error('Error in updatePreviewImage:', error);
+      setImageLoading(false);
+      setImageError(true);
     }
-  }, [selections, room, bhkType, houseStyle]);
+  };
+
+  const handleRetryImage = () => {
+    setRetryCount(0);
+    updatePreviewImage();
+  };
 
   const handleImageLoad = () => {
     setImageLoading(false);
@@ -44,6 +94,7 @@ export function RoomPreview({ room, selections, title, bhkType, houseStyle }: Ro
   };
 
   const handleImageError = () => {
+    console.error('Image load error in img element');
     setImageLoading(false);
     setImageError(true);
   };
@@ -51,7 +102,6 @@ export function RoomPreview({ room, selections, title, bhkType, houseStyle }: Ro
   const getColorPalette = () => {
     const selectionValues = Object.values(selections);
     
-    // Generate color palette based on house style and selections
     const stylePalettes = {
       "Modern": {
         base: ["#2C2C2C", "#F5F5F5", "#E8E8E8"],
@@ -90,7 +140,6 @@ export function RoomPreview({ room, selections, title, bhkType, houseStyle }: Ro
     const styleData = stylePalettes[houseStyle as keyof typeof stylePalettes];
     if (!styleData) return ["#E8E2D5", "#D4C5B9", "#B8A082"];
 
-    // Check if any selection has a specific variant
     for (const selection of selectionValues) {
       if (styleData.variants[selection as keyof typeof styleData.variants]) {
         return styleData.variants[selection as keyof typeof styleData.variants];
@@ -167,7 +216,7 @@ export function RoomPreview({ room, selections, title, bhkType, houseStyle }: Ro
           <div className="aspect-[4/3] relative bg-gray-100">
             {/* Loading State */}
             {imageLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-50 z-10">
                 <div className="text-center">
                   <Loader2 className="h-8 w-8 animate-spin text-brand-primary mx-auto mb-2" />
                   <p className="text-sm text-brand-muted">Loading preview...</p>
@@ -177,29 +226,38 @@ export function RoomPreview({ room, selections, title, bhkType, houseStyle }: Ro
 
             {/* Error State */}
             {imageError && !imageLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-50 z-10">
                 <div className="text-center">
                   <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
-                  <p className="text-sm text-brand-muted">Preview unavailable</p>
-                  <p className="text-xs text-gray-400">{bhkType} {houseStyle} {room}</p>
+                  <p className="text-sm text-brand-muted mb-3">Preview temporarily unavailable</p>
+                  <p className="text-xs text-gray-400 mb-4">{bhkType} {houseStyle} {room}</p>
+                  <button
+                    onClick={handleRetryImage}
+                    className="flex items-center space-x-2 text-brand-primary hover:text-brand-primary/80 text-sm mx-auto"
+                  >
+                    <RefreshCw className="h-4 w-4" />
+                    <span>Retry</span>
+                  </button>
                 </div>
               </div>
             )}
 
             {/* Main Image */}
-            <img
-              src={previewImage}
-              alt={`${room} preview for ${bhkType} ${houseStyle}`}
-              className={`w-full h-full object-cover transition-opacity duration-300 ${
-                imageLoading ? 'opacity-0' : 'opacity-100'
-              }`}
-              onLoad={handleImageLoad}
-              onError={handleImageError}
-              style={{ display: imageError ? 'none' : 'block' }}
-            />
+            {previewImage && (
+              <img
+                src={previewImage}
+                alt={`${room} preview for ${bhkType} ${houseStyle}`}
+                className={`w-full h-full object-cover transition-opacity duration-300 ${
+                  imageLoading ? 'opacity-0' : 'opacity-100'
+                }`}
+                onLoad={handleImageLoad}
+                onError={handleImageError}
+                style={{ display: imageError ? 'none' : 'block' }}
+              />
+            )}
             
             {/* Overlays - only show when image is loaded */}
-            {!imageLoading && !imageError && (
+            {!imageLoading && !imageError && previewImage && (
               <>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 
