@@ -24,7 +24,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
       price: "₹8-15 Lakhs",
       sqft: "450-650 sq ft",
       ideal: "Singles & Couples",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+      image: "https://www.indextap.com/blog/wp-content/uploads/2023/12/1-bhk-flat-interior-design-service.jpg"
     },
     {
       type: "2BHK",
@@ -34,7 +34,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
       price: "₹15-30 Lakhs",
       sqft: "650-950 sq ft",
       ideal: "Small Families",
-      image: "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+      image: "https://homesunderbudget.com/wp-content/uploads/2024/10/2-bhk-isometric-768x486.png"
     },
     {
       type: "3BHK",
@@ -44,7 +44,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
       price: "₹25-50 Lakhs",
       sqft: "950-1300 sq ft",
       ideal: "Large Families",
-      image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=400&h=300&fit=crop"
+      image: "https://glamwoodinteriors.com/wp-content/uploads/2024/11/p.webp"
     }
   ];
 
