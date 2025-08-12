@@ -61,11 +61,11 @@ export default function Wizard() {
       options: getFilteredMaterials("paint", "living", ["Warm White", "Greige", "Soft Beige", "Cool Grey"]),
       type: "color" as const 
     },
-    { 
-      name: "furniture", 
-      label: "Seating Furniture", 
-      options: ["Modern Sofa", "Classic Sofa", "Sectional"],
-      type: "style" as const 
+    {
+      name: "furniture",
+      label: "Seating Furniture",
+      options: ["KIVIK Sofa", "EKTORP Sofa", "GLOSTAD Sofa"],
+      type: "style" as const
     },
     { 
       name: "carpet", 
