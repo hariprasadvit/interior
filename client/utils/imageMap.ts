@@ -4,23 +4,23 @@ export const imageMap = {
   "1BHK": {
     "Modern": {
       "living": {
-        // Floor Tiles - Actual tile images
-        "Matte Porcelain": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Glossy Ceramic": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        // Paint colors - Wall colors
-        "Warm White": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Greige": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Soft Beige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Cool Grey": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        // IKEA Three-Seat Sofas
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        // Carpet - Actual carpet/rug images
-        "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Solid Color": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
+        // Floor Tiles - Specific tile images
+        "Matte Porcelain": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Glossy Ceramic": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        // Paint colors - Different wall paint examples
+        "Warm White": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Greige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Soft Beige": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Cool Grey": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        // IKEA Three-Seat Sofas - Different sofa styles
+        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        // Carpet - Different rug styles
+        "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Solid Color": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
       },
       "kitchen": {
         // Kitchen countertops
