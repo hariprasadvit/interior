@@ -246,6 +246,9 @@ export default function Wizard() {
               fields={livingFields}
               selections={state.living}
               onSelectionChange={(field, value) => handleMaterialSelect("living", field, value)}
+              bhkType={state.bhkType}
+              houseStyle={state.houseStyle}
+              roomName="living"
             />
             
             <RoomPreview
@@ -279,6 +282,9 @@ export default function Wizard() {
               fields={kitchenFields}
               selections={state.kitchen}
               onSelectionChange={(field, value) => handleMaterialSelect("kitchen", field, value)}
+              bhkType={state.bhkType}
+              houseStyle={state.houseStyle}
+              roomName="kitchen"
             />
             
             <RoomPreview
@@ -312,6 +318,9 @@ export default function Wizard() {
               fields={bedroomFields}
               selections={state.bedroom}
               onSelectionChange={(field, value) => handleMaterialSelect("bedroom", field, value)}
+              bhkType={state.bhkType}
+              houseStyle={state.houseStyle}
+              roomName="bedroom"
             />
             
             <RoomPreview
