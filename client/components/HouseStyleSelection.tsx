@@ -40,7 +40,7 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
       description: "Timeless elegance with rich textures and warm colors",
       characteristics: ["Warm wood tones", "Rich fabrics", "Ornate details", "Classic furniture"],
       colorPalette: ["#8B4513", "#DAA520", "#F5DEB3", "#CD853F"],
-      image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=500&h=400&fit=crop&auto=enhance&hue=20",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Faf54d6c82c2c428fa406fa6aa6d65a07?format=webp&width=800",
       mood: "Warm & Inviting"
     },
     {
