@@ -156,10 +156,21 @@ export function MaterialPicker({ title, fields, selections, onSelectionChange, b
                     }`}
                   >
                     <div className="flex items-center space-x-4 p-4">
-                      {/* Large Material Swatch */}
+                      {/* Material Image */}
                       <div className="relative">
-                        <div 
-                          className="w-16 h-16 rounded-lg border-2 border-gray-200 shadow-inner"
+                        <img
+                          src={getRoomImage(bhkType, houseStyle, roomName, option)}
+                          alt={option}
+                          className="w-16 h-16 rounded-lg border-2 border-gray-200 shadow-inner object-cover"
+                          onError={(e) => {
+                            // Fallback to swatch style if image fails
+                            e.currentTarget.style.display = 'none';
+                            e.currentTarget.nextElementSibling!.style.display = 'block';
+                          }}
+                        />
+                        {/* Fallback swatch */}
+                        <div
+                          className="w-16 h-16 rounded-lg border-2 border-gray-200 shadow-inner hidden"
                           style={getSwatchStyle(swatch)}
                         />
                         {/* Texture overlay indicators */}
