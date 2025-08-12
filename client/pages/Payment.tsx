@@ -5,7 +5,7 @@ import { Input } from "../components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { useToast } from "../hooks/use-toast";
-import { ArrowLeft, Shield, CreditCard, Smartphone, Building, Lock, CheckCircle } from "lucide-react";
+import { ArrowLeft, Shield, CreditCard, Smartphone, Building, Lock, CheckCircle, Home, Palette, Eye } from "lucide-react";
 
 export default function Payment() {
   const navigate = useNavigate();
@@ -19,7 +19,33 @@ export default function Payment() {
   const [bankName, setBankName] = useState("");
   const [processing, setProcessing] = useState(false);
   
+  // Get user selections from localStorage or state management
+  const userSelections = {
+    bhkType: "2BHK",
+    houseStyle: "Modern",
+    living: {
+      tile: "Matte Porcelain",
+      paint: "Warm White",
+      furniture: "Modern Sofa",
+      carpet: "Modern Geometric"
+    },
+    kitchen: {
+      slab: "Quartz White",
+      wallTile: "Subway Gloss",
+      doorKnob: "Modern Handle",
+      sink: "Single Bowl"
+    },
+    bedroom: {
+      flooring: "Wood Laminate",
+      bedroomPaint: "Calming Blue",
+      wardrobe: "Matte Laminate",
+      lighting: "Warm Recessed",
+      bed: "Platform Bed"
+    }
+  };
+
   const advanceAmount = 25000;
+  const totalProject = 500000;
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {
@@ -39,6 +65,7 @@ export default function Payment() {
 
     setTimeout(() => {
       localStorage.setItem("paymentCompleted", "true");
+      localStorage.setItem("userSelections", JSON.stringify(userSelections));
       setProcessing(false);
       navigate("/success");
     }, 3000);
@@ -75,7 +102,7 @@ export default function Payment() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Payment Form */}
           <div className="lg:col-span-2">
@@ -123,13 +150,36 @@ export default function Payment() {
                     </div>
                     <div className="grid grid-cols-3 gap-4">
                       {[
-                        { name: "Google Pay", color: "bg-blue-100", icon: "🔵" },
-                        { name: "PhonePe", color: "bg-purple-100", icon: "🟣" },
-                        { name: "Paytm", color: "bg-green-100", icon: "🟢" }
+                        { 
+                          name: "Google Pay", 
+                          logo: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg",
+                          bg: "bg-blue-50"
+                        },
+                        { 
+                          name: "PhonePe", 
+                          logo: "https://upload.wikimedia.org/wikipedia/commons/0/09/PhonePe_logo.svg",
+                          bg: "bg-purple-50"
+                        },
+                        { 
+                          name: "Paytm", 
+                          logo: "https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg",
+                          bg: "bg-blue-50"
+                        }
                       ].map((app) => (
-                        <div key={app.name} className={`${app.color} p-4 rounded-xl text-center`}>
-                          <div className="text-2xl mb-2">{app.icon}</div>
-                          <div className="text-sm font-medium">{app.name}</div>
+                        <div key={app.name} className={`${app.bg} p-4 rounded-xl text-center border hover:shadow-md transition-all`}>
+                          <div className="h-8 mb-2 flex items-center justify-center">
+                            <img 
+                              src={app.logo} 
+                              alt={app.name}
+                              className="h-6 max-w-full object-contain"
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                                e.currentTarget.nextElementSibling!.style.display = 'block';
+                              }}
+                            />
+                            <div className="text-xl hidden">{app.name.charAt(0)}</div>
+                          </div>
+                          <div className="text-sm font-medium text-gray-700">{app.name}</div>
                         </div>
                       ))}
                     </div>
@@ -254,17 +304,88 @@ export default function Payment() {
             </Card>
           </div>
 
-          {/* Order Summary */}
-          <div>
-            <Card className="shadow-lg border-0 sticky top-8">
+          {/* Order Summary with User Selections */}
+          <div className="space-y-6">
+            {/* Design Summary */}
+            <Card className="shadow-lg border-0">
               <CardHeader>
-                <CardTitle className="text-xl text-brand-text">Order Summary</CardTitle>
+                <CardTitle className="text-xl text-brand-text flex items-center space-x-2">
+                  <Eye className="h-5 w-5" />
+                  <span>Your Design</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                    <Home className="h-5 w-5 text-brand-primary" />
+                    <div>
+                      <p className="font-semibold text-brand-text">{userSelections.bhkType}</p>
+                      <p className="text-sm text-brand-muted">Apartment Type</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                    <Palette className="h-5 w-5 text-brand-primary" />
+                    <div>
+                      <p className="font-semibold text-brand-text">{userSelections.houseStyle}</p>
+                      <p className="text-sm text-brand-muted">Design Style</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Room Selections */}
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-brand-text">Room Selections:</h4>
+                  
+                  {/* Living Room */}
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h5 className="font-medium text-brand-text mb-2">Living Room</h5>
+                    <div className="space-y-1 text-sm">
+                      {Object.entries(userSelections.living).map(([key, value]) => (
+                        <p key={key} className="text-brand-muted">
+                          <span className="capitalize">{key}:</span> {value}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Kitchen */}
+                  <div className="border-l-4 border-orange-500 pl-4">
+                    <h5 className="font-medium text-brand-text mb-2">Kitchen</h5>
+                    <div className="space-y-1 text-sm">
+                      {Object.entries(userSelections.kitchen).map(([key, value]) => (
+                        <p key={key} className="text-brand-muted">
+                          <span className="capitalize">{key.replace('wallTile', 'Wall Tile').replace('doorKnob', 'Cabinet Hardware')}:</span> {value}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bedroom */}
+                  <div className="border-l-4 border-purple-500 pl-4">
+                    <h5 className="font-medium text-brand-text mb-2">Bedroom</h5>
+                    <div className="space-y-1 text-sm">
+                      {Object.entries(userSelections.bedroom).map(([key, value]) => (
+                        <p key={key} className="text-brand-muted">
+                          <span className="capitalize">{key.replace('bedroomPaint', 'Paint')}:</span> {value}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Payment Summary */}
+            <Card className="shadow-lg border-0">
+              <CardHeader>
+                <CardTitle className="text-xl text-brand-text">Payment Summary</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-brand-muted">Project Total</span>
-                    <span className="font-semibold text-brand-text">₹5,00,000</span>
+                    <span className="font-semibold text-brand-text">{formatCurrency(totalProject)}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-brand-muted">Advance Payment (5%)</span>
