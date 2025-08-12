@@ -1,3 +1,5 @@
+import { getRoomImage } from '../utils/imageMap';
+
 interface MaterialField {
   name: string;
   label: string;
@@ -10,6 +12,9 @@ interface MaterialPickerProps {
   fields: MaterialField[];
   selections: Record<string, string>;
   onSelectionChange: (field: string, value: string) => void;
+  bhkType: string;
+  houseStyle: string;
+  roomName: string;
 }
 
 export function MaterialPicker({ title, fields, selections, onSelectionChange }: MaterialPickerProps) {
