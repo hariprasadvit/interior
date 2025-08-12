@@ -31,7 +31,7 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
       description: "Less is more - focus on functionality and tranquility",
       characteristics: ["Monochromatic palettes", "Natural materials", "Uncluttered spaces", "Simple forms"],
       colorPalette: ["#FFFFFF", "#F8F8F8", "#E0E0E0", "#CCCCCC"],
-      image: "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=500&h=400&fit=crop&auto=enhance&sat=-30",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fb419a54b0da842d5b0350a48628594a0?format=webp&width=800",
       mood: "Peaceful & Serene"
     },
     {
