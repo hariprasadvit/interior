@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { getRoomImage, getAvailableMaterials } from "../utils/imageMap";
+import { ImageIcon, Loader2 } from "lucide-react";
 
 interface RoomPreviewProps {
   room: "living" | "kitchen" | "bedroom";
@@ -13,11 +14,16 @@ interface RoomPreviewProps {
 export function RoomPreview({ room, selections, title, bhkType, houseStyle }: RoomPreviewProps) {
   const [previewImage, setPreviewImage] = useState("");
   const [currentMaterial, setCurrentMaterial] = useState<string>("");
+  const [imageLoading, setImageLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     // Get the most recent selection to determine the preview image
     const selectedValues = Object.values(selections).filter(Boolean);
     const lastSelection = selectedValues[selectedValues.length - 1];
+    
+    setImageLoading(true);
+    setImageError(false);
     
     // Use getRoomImage to get image locked to BHK + style combination
     if (lastSelection) {
@@ -31,6 +37,16 @@ export function RoomPreview({ room, selections, title, bhkType, houseStyle }: Ro
       setCurrentMaterial("");
     }
   }, [selections, room, bhkType, houseStyle]);
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
+    setImageError(false);
+  };
+
+  const handleImageError = () => {
+    setImageLoading(false);
+    setImageError(true);
+  };
 
   const getColorPalette = () => {
     const selectionValues = Object.values(selections);
@@ -132,98 +148,140 @@ export function RoomPreview({ room, selections, title, bhkType, houseStyle }: Ro
 
   return (
     <div className="sticky top-8">
-      <Card className="overflow-hidden shadow-2xl border-0">
-        <CardHeader>
+      <Card className="overflow-hidden shadow-2xl border-0 bg-white">
+        <CardHeader className="pb-4">
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="text-2xl text-brand-text">{title} Preview</CardTitle>
-              <CardDescription>Locked to {bhkType} {houseStyle} style</CardDescription>
+              <CardDescription>
+                <span className="font-medium">{bhkType}</span> · <span className="font-medium">{houseStyle}</span> Style
+              </CardDescription>
             </div>
-            <div className={`px-3 py-1 rounded-full ${styleBadge.color} flex items-center space-x-1`}>
+            <div className={`px-3 py-1 rounded-full ${styleBadge.color} flex items-center space-x-1 text-sm`}>
               <span>{styleBadge.icon}</span>
-              <span className="text-sm font-medium">{houseStyle}</span>
+              <span className="font-medium">{houseStyle}</span>
             </div>
           </div>
         </CardHeader>
         <CardContent className="p-0">
-          <div className="aspect-[4/3] relative">
+          <div className="aspect-[4/3] relative bg-gray-100">
+            {/* Loading State */}
+            {imageLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
+                <div className="text-center">
+                  <Loader2 className="h-8 w-8 animate-spin text-brand-primary mx-auto mb-2" />
+                  <p className="text-sm text-brand-muted">Loading preview...</p>
+                </div>
+              </div>
+            )}
+
+            {/* Error State */}
+            {imageError && !imageLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
+                <div className="text-center">
+                  <ImageIcon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
+                  <p className="text-sm text-brand-muted">Preview unavailable</p>
+                  <p className="text-xs text-gray-400">{bhkType} {houseStyle} {room}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Main Image */}
             <img
               src={previewImage}
               alt={`${room} preview for ${bhkType} ${houseStyle}`}
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover transition-opacity duration-300 ${
+                imageLoading ? 'opacity-0' : 'opacity-100'
+              }`}
+              onLoad={handleImageLoad}
+              onError={handleImageError}
+              style={{ display: imageError ? 'none' : 'block' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             
-            {/* BHK Type Badge */}
-            <div className="absolute top-4 left-4 bg-brand-primary px-3 py-1 rounded-full">
-              <span className="text-white text-sm font-medium">{bhkType}</span>
-            </div>
-            
-            {/* Color Palette Overlay */}
-            <div className="absolute top-4 right-4 flex space-x-1">
-              {getColorPalette().map((color, index) => (
-                <div
-                  key={index}
-                  className="w-6 h-6 rounded-full border-2 border-white shadow-lg"
-                  style={{ backgroundColor: color }}
-                />
-              ))}
-            </div>
-            
-            {/* Current Material Indicator */}
-            {currentMaterial && (
-              <div className="absolute top-16 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg">
-                <span className="text-xs font-medium text-brand-text">Latest: {currentMaterial}</span>
-              </div>
-            )}
-            
-            {/* Selection Summary */}
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-lg font-bold text-brand-text">{title} Design</h3>
-                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
-                    Style Locked
-                  </span>
+            {/* Overlays - only show when image is loaded */}
+            {!imageLoading && !imageError && (
+              <>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                
+                {/* BHK Type Badge */}
+                <div className="absolute top-4 left-4 bg-brand-primary px-3 py-1 rounded-full shadow-lg">
+                  <span className="text-white text-sm font-medium">{bhkType}</span>
                 </div>
                 
-                {Object.keys(selections).filter(key => selections[key]).length > 0 ? (
-                  <div className="grid grid-cols-2 gap-3">
-                    {Object.entries(selections).filter(([_, value]) => value).map(([key, value]) => (
-                      <div key={key} className="flex items-center space-x-2">
-                        <div
-                          className="w-3 h-3 rounded border border-gray-300"
-                          style={{ backgroundColor: getMaterialSwatch(value) }}
-                        />
-                        <div className="min-w-0 flex-1">
-                          <p className="text-xs font-medium text-brand-text capitalize truncate">{key}</p>
-                          <p className="text-xs text-brand-muted truncate">{value}</p>
-                        </div>
-                      </div>
-                    ))}
+                {/* Color Palette Overlay */}
+                <div className="absolute top-4 right-4 flex space-x-1">
+                  {getColorPalette().map((color, index) => (
+                    <div
+                      key={index}
+                      className="w-6 h-6 rounded-full border-2 border-white shadow-lg"
+                      style={{ backgroundColor: color }}
+                    />
+                  ))}
+                </div>
+                
+                {/* Current Material Indicator */}
+                {currentMaterial && (
+                  <div className="absolute top-16 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-lg">
+                    <span className="text-xs font-medium text-brand-text">Latest: {currentMaterial}</span>
                   </div>
-                ) : (
-                  <p className="text-sm text-brand-muted text-center">
-                    Start selecting materials to see your {houseStyle.toLowerCase()} {bhkType} design
-                  </p>
                 )}
-              </div>
-            </div>
+                
+                {/* Selection Summary */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-lg font-bold text-brand-text">{title} Design</h3>
+                      <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-medium">
+                        Style Locked
+                      </span>
+                    </div>
+                    
+                    {Object.keys(selections).filter(key => selections[key]).length > 0 ? (
+                      <div className="grid grid-cols-2 gap-3">
+                        {Object.entries(selections).filter(([_, value]) => value).map(([key, value]) => (
+                          <div key={key} className="flex items-center space-x-2">
+                            <div
+                              className="w-3 h-3 rounded border border-gray-300 shadow-sm"
+                              style={{ backgroundColor: getMaterialSwatch(value) }}
+                            />
+                            <div className="min-w-0 flex-1">
+                              <p className="text-xs font-medium text-brand-text capitalize truncate">{key}</p>
+                              <p className="text-xs text-brand-muted truncate">{value}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-2">
+                        <p className="text-sm text-brand-muted">
+                          Start selecting materials to see your {houseStyle.toLowerCase()} {bhkType} design
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </CardContent>
       </Card>
 
       {/* Available Materials Info */}
-      <div className="mt-4 bg-blue-50 p-4 rounded-xl">
+      <div className="mt-4 bg-blue-50 p-4 rounded-xl border border-blue-100">
         <h4 className="text-sm font-semibold text-blue-900 mb-2">
           Available for {houseStyle} {bhkType}:
         </h4>
         <div className="flex flex-wrap gap-1">
           {getAvailableMaterials(bhkType, houseStyle, room).slice(0, 6).map((material, index) => (
-            <span key={index} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+            <span key={index} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">
               {material}
             </span>
           ))}
+          {getAvailableMaterials(bhkType, houseStyle, room).length > 6 && (
+            <span className="text-xs text-blue-600">
+              +{getAvailableMaterials(bhkType, houseStyle, room).length - 6} more
+            </span>
+          )}
         </div>
       </div>
     </div>
