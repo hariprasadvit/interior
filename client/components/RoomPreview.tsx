@@ -1,121 +1,92 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { getRoomImage, getAvailableMaterials } from "../utils/imageMap";
 
 interface RoomPreviewProps {
   room: "living" | "kitchen" | "bedroom";
   selections: Record<string, string>;
   title: string;
+  bhkType: string;
+  houseStyle: string;
 }
 
-export function RoomPreview({ room, selections, title }: RoomPreviewProps) {
+export function RoomPreview({ room, selections, title, bhkType, houseStyle }: RoomPreviewProps) {
   const [previewImage, setPreviewImage] = useState("");
-
-  // Base room layouts - consistent room structure
-  const baseRoomImages = {
-    living: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop", // Modern living room base
-    kitchen: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop", // Kitchen base layout
-    bedroom: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&h=400&fit=crop" // Bedroom base layout
-  };
-
-  // Material-specific variations for each room
-  const materialImages = {
-    living: {
-      // Tile variations
-      "Matte Porcelain": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      "Glossy Ceramic": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop",
-      "Textured Stone": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop",
-      // Paint variations
-      "Warm White": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      "Greige": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop", 
-      "Soft Beige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&h=400&fit=crop",
-      "Cool Grey": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop",
-      // Furniture variations
-      "Modern Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      "Classic Sofa": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop",
-      "Sectional": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=600&h=400&fit=crop",
-      // Carpet variations
-      "Persian Rug": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop",
-      "Modern Geometric": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      "Solid Color": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop"
-    },
-    kitchen: {
-      // Slab variations
-      "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop",
-      "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
-      "Marble Carrara": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop",
-      // Wall tile variations
-      "Subway Gloss": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
-      "Hex Matte": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop",
-      "Patterned Porcelain": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop",
-      // Door knob styles
-      "Modern Handle": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop",
-      "Classic Knob": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
-      "Brushed Steel": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop",
-      // Sink styles
-      "Single Bowl": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop",
-      "Double Bowl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=400&fit=crop",
-      "Farmhouse": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&h=400&fit=crop"
-    },
-    bedroom: {
-      // Flooring variations
-      "Wood Laminate": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&h=400&fit=crop",
-      "Vitrified Tile": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop",
-      "Engineered Wood": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      // Paint variations
-      "Calming Blue": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&h=400&fit=crop",
-      "Warm Taupe": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop",
-      "Ivory": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      // Wardrobe variations
-      "Matte Laminate": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&h=400&fit=crop",
-      "High-Gloss Laminate": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop",
-      "Veneer": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      // Lighting variations
-      "Warm Recessed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&h=400&fit=crop",
-      "Pendant": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop",
-      "Cove": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      // Bed types
-      "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&h=400&fit=crop",
-      "Storage Bed": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?w=600&h=400&fit=crop",
-      "Four Poster": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop"
-    }
-  };
+  const [currentMaterial, setCurrentMaterial] = useState<string>("");
 
   useEffect(() => {
     // Get the most recent selection to determine the preview image
     const selectedValues = Object.values(selections).filter(Boolean);
     const lastSelection = selectedValues[selectedValues.length - 1];
     
-    if (lastSelection && materialImages[room][lastSelection as keyof typeof materialImages[typeof room]]) {
-      setPreviewImage(materialImages[room][lastSelection as keyof typeof materialImages[typeof room]]);
+    // Use getRoomImage to get image locked to BHK + style combination
+    if (lastSelection) {
+      const image = getRoomImage(bhkType, houseStyle, room, lastSelection);
+      setPreviewImage(image);
+      setCurrentMaterial(lastSelection);
     } else {
-      setPreviewImage(baseRoomImages[room]);
+      // Show default image for this BHK + style + room combination
+      const image = getRoomImage(bhkType, houseStyle, room);
+      setPreviewImage(image);
+      setCurrentMaterial("");
     }
-  }, [selections, room]);
+  }, [selections, room, bhkType, houseStyle]);
 
   const getColorPalette = () => {
     const selectionValues = Object.values(selections);
     
-    // Generate color palette based on selections
-    if (selectionValues.includes("Warm White") || selectionValues.includes("Ivory")) {
-      return ["#F8F6F0", "#E8E2D5", "#D4C5B9"];
-    } else if (selectionValues.includes("Cool Grey") || selectionValues.includes("Granite Black")) {
-      return ["#3A3A3A", "#6B6B6B", "#9E9E9E"];
-    } else if (selectionValues.includes("Calming Blue")) {
-      return ["#4A90E2", "#7BB3F0", "#A8C8F0"];
-    } else if (selectionValues.includes("Greige") || selectionValues.includes("Warm Taupe")) {
-      return ["#8D7B68", "#A8987A", "#C4B49A"];
-    } else {
-      return ["#E8E2D5", "#D4C5B9", "#B8A082"];
+    // Generate color palette based on house style and selections
+    const stylePalettes = {
+      "Modern": {
+        base: ["#2C2C2C", "#F5F5F5", "#E8E8E8"],
+        variants: {
+          "Warm White": ["#FAF6F2", "#E8E2D5", "#D4C5B9"],
+          "Cool Grey": ["#3A3A3A", "#6B6B6B", "#9E9E9E"],
+          "Granite Black": ["#2C2C2C", "#4A4A4A", "#6B6B6B"],
+          "Quartz White": ["#FFFFFF", "#F8F8F8", "#E8E8E8"]
+        }
+      },
+      "Minimalist": {
+        base: ["#FFFFFF", "#F8F8F8", "#E0E0E0"],
+        variants: {
+          "Warm White": ["#FEFEFE", "#F9F9F9", "#F0F0F0"],
+          "Cool Grey": ["#E8E8E8", "#D0D0D0", "#B8B8B8"]
+        }
+      },
+      "Traditional": {
+        base: ["#8B4513", "#DAA520", "#F5DEB3"],
+        variants: {
+          "Warm White": ["#F5DEB3", "#DEB887", "#D2B48C"],
+          "Soft Beige": ["#F5E6D3", "#E6D2B5", "#D7BE97"],
+          "Wood Laminate": ["#8B4513", "#A0522D", "#CD853F"]
+        }
+      },
+      "Industrial": {
+        base: ["#2F2F2F", "#696969", "#B8860B"],
+        variants: {
+          "Cool Grey": ["#2F2F2F", "#4A4A4A", "#696969"],
+          "Textured Stone": ["#5D5D5D", "#7A7A7A", "#9E9E9E"],
+          "Granite Black": ["#1C1C1C", "#2F2F2F", "#4A4A4A"]
+        }
+      }
+    };
+
+    const styleData = stylePalettes[houseStyle as keyof typeof stylePalettes];
+    if (!styleData) return ["#E8E2D5", "#D4C5B9", "#B8A082"];
+
+    // Check if any selection has a specific variant
+    for (const selection of selectionValues) {
+      if (styleData.variants[selection as keyof typeof styleData.variants]) {
+        return styleData.variants[selection as keyof typeof styleData.variants];
+      }
     }
+
+    return styleData.base;
   };
 
   const getMaterialSwatch = (material: string) => {
     const swatchColors: Record<string, string> = {
-      // Tiles
-      "Matte Porcelain": "#F5F5F5",
-      "Glossy Ceramic": "#FFFFFF",
-      "Textured Stone": "#8B7355",
-      // Paints
+      // Paint colors
       "Warm White": "#FAF6F2",
       "Greige": "#8D7B68",
       "Soft Beige": "#F5E6D3",
@@ -123,6 +94,10 @@ export function RoomPreview({ room, selections, title }: RoomPreviewProps) {
       "Calming Blue": "#4A90E2",
       "Warm Taupe": "#A8987A",
       "Ivory": "#FFFFF0",
+      // Tiles
+      "Matte Porcelain": "#F5F5F5",
+      "Glossy Ceramic": "#FFFFFF",
+      "Textured Stone": "#8B7355",
       // Kitchen materials
       "Granite Black": "#2C2C2C",
       "Quartz White": "#FFFFFF",
@@ -142,21 +117,47 @@ export function RoomPreview({ room, selections, title }: RoomPreviewProps) {
     return swatchColors[material] || "#E8E8E8";
   };
 
+  const getStyleBadge = () => {
+    const badges = {
+      "Modern": { color: "bg-blue-100 text-blue-800", icon: "🏢" },
+      "Minimalist": { color: "bg-gray-100 text-gray-800", icon: "⚪" },
+      "Traditional": { color: "bg-orange-100 text-orange-800", icon: "🏛️" },
+      "Industrial": { color: "bg-slate-100 text-slate-800", icon: "🏭" }
+    };
+    
+    return badges[houseStyle as keyof typeof badges] || badges.Modern;
+  };
+
+  const styleBadge = getStyleBadge();
+
   return (
     <div className="sticky top-8">
-      <Card className="overflow-hidden shadow-xl border-0">
+      <Card className="overflow-hidden shadow-2xl border-0">
         <CardHeader>
-          <CardTitle className="text-2xl text-brand-text">{title} Preview</CardTitle>
-          <CardDescription>See your selections come to life</CardDescription>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="text-2xl text-brand-text">{title} Preview</CardTitle>
+              <CardDescription>Locked to {bhkType} {houseStyle} style</CardDescription>
+            </div>
+            <div className={`px-3 py-1 rounded-full ${styleBadge.color} flex items-center space-x-1`}>
+              <span>{styleBadge.icon}</span>
+              <span className="text-sm font-medium">{houseStyle}</span>
+            </div>
+          </div>
         </CardHeader>
         <CardContent className="p-0">
           <div className="aspect-[4/3] relative">
             <img
               src={previewImage}
-              alt={`${room} preview`}
+              alt={`${room} preview for ${bhkType} ${houseStyle}`}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            
+            {/* BHK Type Badge */}
+            <div className="absolute top-4 left-4 bg-brand-primary px-3 py-1 rounded-full">
+              <span className="text-white text-sm font-medium">{bhkType}</span>
+            </div>
             
             {/* Color Palette Overlay */}
             <div className="absolute top-4 right-4 flex space-x-1">
@@ -169,29 +170,62 @@ export function RoomPreview({ room, selections, title }: RoomPreviewProps) {
               ))}
             </div>
             
-            {/* Material Swatches */}
-            <div className="absolute bottom-4 left-4 right-4">
-              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
-                <h3 className="text-lg font-bold text-brand-text mb-3">Current Selections</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {Object.entries(selections).filter(([_, value]) => value).map(([key, value]) => (
-                    <div key={key} className="flex items-center space-x-2">
-                      <div
-                        className="w-4 h-4 rounded border border-gray-300"
-                        style={{ backgroundColor: getMaterialSwatch(value) }}
-                      />
-                      <div className="min-w-0 flex-1">
-                        <p className="text-xs font-medium text-brand-text capitalize truncate">{key}</p>
-                        <p className="text-xs text-brand-muted truncate">{value}</p>
-                      </div>
-                    </div>
-                  ))}
+            {/* Current Material Indicator */}
+            {currentMaterial && (
+              <div className="absolute top-16 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg">
+                <span className="text-xs font-medium text-brand-text">Latest: {currentMaterial}</span>
+              </div>
+            )}
+            
+            {/* Selection Summary */}
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-lg font-bold text-brand-text">{title} Design</h3>
+                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                    Style Locked
+                  </span>
                 </div>
+                
+                {Object.keys(selections).filter(key => selections[key]).length > 0 ? (
+                  <div className="grid grid-cols-2 gap-3">
+                    {Object.entries(selections).filter(([_, value]) => value).map(([key, value]) => (
+                      <div key={key} className="flex items-center space-x-2">
+                        <div
+                          className="w-3 h-3 rounded border border-gray-300"
+                          style={{ backgroundColor: getMaterialSwatch(value) }}
+                        />
+                        <div className="min-w-0 flex-1">
+                          <p className="text-xs font-medium text-brand-text capitalize truncate">{key}</p>
+                          <p className="text-xs text-brand-muted truncate">{value}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm text-brand-muted text-center">
+                    Start selecting materials to see your {houseStyle.toLowerCase()} {bhkType} design
+                  </p>
+                )}
               </div>
             </div>
           </div>
         </CardContent>
       </Card>
+
+      {/* Available Materials Info */}
+      <div className="mt-4 bg-blue-50 p-4 rounded-xl">
+        <h4 className="text-sm font-semibold text-blue-900 mb-2">
+          Available for {houseStyle} {bhkType}:
+        </h4>
+        <div className="flex flex-wrap gap-1">
+          {getAvailableMaterials(bhkType, houseStyle, room).slice(0, 6).map((material, index) => (
+            <span key={index} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+              {material}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
