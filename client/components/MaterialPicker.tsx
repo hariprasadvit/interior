@@ -17,7 +17,7 @@ interface MaterialPickerProps {
   roomName: string;
 }
 
-export function MaterialPicker({ title, fields, selections, onSelectionChange }: MaterialPickerProps) {
+export function MaterialPicker({ title, fields, selections, onSelectionChange, bhkType, houseStyle, roomName }: MaterialPickerProps) {
   const getMaterialSwatch = (fieldName: string, option: string) => {
     const swatchMap: Record<string, Record<string, { color: string; pattern?: string; texture?: string }>> = {
       // Living Room Materials
