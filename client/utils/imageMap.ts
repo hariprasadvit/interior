@@ -75,9 +75,9 @@ export const imageMap = {
         "Soft Beige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
         "Cool Grey": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
         // IKEA Three-Seat Sofas - Minimalist style
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60"
+        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80",
+        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80",
+        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80"
       },
       "kitchen": {
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
@@ -97,7 +97,7 @@ export const imageMap = {
         "Warm White": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
         "Greige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
         "Soft Beige": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=30",
+        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=30&q=80",
         "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=30"
       },
       "kitchen": {
@@ -115,7 +115,7 @@ export const imageMap = {
       "living": {
         "Cool Grey": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
         "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30"
+        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30&q=80"
       },
       "kitchen": {
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
@@ -139,8 +139,8 @@ export const imageMap = {
         "Greige": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Soft Beige": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Cool Grey": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
       },
       "kitchen": {
@@ -164,7 +164,7 @@ export const imageMap = {
         "Matte Porcelain": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
         "Warm White": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
         "Cool Grey": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70"
+        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70&q=80"
       },
       "kitchen": {
         "Quartz White": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
@@ -178,7 +178,7 @@ export const imageMap = {
     "Traditional": {
       "living": {
         "Warm White": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40&q=80",
         "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40"
       },
       "kitchen": {
@@ -210,7 +210,7 @@ export const imageMap = {
         "Glossy Ceramic": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Warm White": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Cool Grey": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
       },
       "kitchen": {
@@ -228,7 +228,7 @@ export const imageMap = {
     "Minimalist": {
       "living": {
         "Warm White": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80",
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80"
+        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80&q=80"
       },
       "kitchen": {
         "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80"
@@ -239,7 +239,7 @@ export const imageMap = {
     },
     "Traditional": {
       "living": {
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60",
+        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60&q=80",
         "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60"
       },
       "kitchen": {
