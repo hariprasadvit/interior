@@ -39,7 +39,7 @@ export default function WhatHappensNext() {
       id: 2,
       title: "Site Measurements",
       description:
-        "Our team is conducting precise site measurements to ensure a perfect fit for your interiors.",
+        "Our team will conduct precise site measurements to ensure a perfect fit for your interiors.",
       icon: Ruler,
       color: "bg-blue-500",
       deliverable: null,
@@ -49,7 +49,7 @@ export default function WhatHappensNext() {
       id: 3,
       title: "Design",
       description:
-        "Our design experts are curating concepts tailored to your dream home.",
+        "Our design experts will curate concepts tailored to your dream home.",
       icon: FileText,
       color: "bg-purple-500",
       deliverable: "Designs (PDF)",
@@ -59,7 +59,7 @@ export default function WhatHappensNext() {
       id: 4,
       title: "Validation",
       description:
-        "We're validating the proposed design with our site and technical team for execution readiness.",
+        "We will validate the proposed design with our site and technical team for execution readiness.",
       icon: CheckSquare,
       color: "bg-orange-500",
       deliverable: null,
@@ -69,7 +69,7 @@ export default function WhatHappensNext() {
       id: 5,
       title: "Production",
       description:
-        "Raw materials have been procured, and production is underway at our factory.",
+        "Raw materials will be procured, and production begins at our factory.",
       icon: Factory,
       color: "bg-orange-500",
       deliverable: null,
@@ -79,7 +79,7 @@ export default function WhatHappensNext() {
       id: 6,
       title: "Clear for Delivery",
       description:
-        "Production is complete. Your project is now ready for dispatch.",
+        "Production completes and your project becomes ready for dispatch.",
       icon: CheckSquare,
       color: "bg-teal-500",
       deliverable: null,
@@ -88,7 +88,7 @@ export default function WhatHappensNext() {
     {
       id: 7,
       title: "Delivery",
-      description: "All materials have been delivered to the site.",
+      description: "All materials will be delivered to your site.",
       icon: Truck,
       color: "bg-indigo-500",
       deliverable: null,
@@ -97,7 +97,7 @@ export default function WhatHappensNext() {
     {
       id: 8,
       title: "Installation",
-      description: "Installation work is in progress at your site.",
+      description: "Installation work begins at your site.",
       icon: Wrench,
       color: "bg-yellow-500",
       deliverable: "Site Pictures (multiple jpeg)",
@@ -107,7 +107,7 @@ export default function WhatHappensNext() {
       id: 9,
       title: "Quality Check",
       description:
-        "A final inspection is being conducted to ensure everything meets our quality standards.",
+        "A final inspection will be conducted to ensure everything meets our quality standards.",
       icon: Search,
       color: "bg-pink-500",
       deliverable: null,
@@ -116,7 +116,7 @@ export default function WhatHappensNext() {
     {
       id: 10,
       title: "Handover",
-      description: "Congratulations! Your unit is ready for the handover",
+      description: "Congratulations! Your unit will be ready for the handover",
       icon: Home,
       color: "bg-green-600",
       deliverable: "Handover documents (PDF)",
