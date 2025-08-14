@@ -311,11 +311,17 @@ export function getRoomImage(
 
     // If a specific material is selected, try to get its image
     if (selectedMaterial && roomData[selectedMaterial as keyof typeof roomData]) {
+      console.log(`Found specific material image for ${selectedMaterial}:`, roomData[selectedMaterial as keyof typeof roomData]);
       return roomData[selectedMaterial as keyof typeof roomData];
     }
 
     // Check for room preview image first when no material is selected
+    if (selectedMaterial) {
+      console.log(`Material ${selectedMaterial} not found in room data. Available keys:`, Object.keys(roomData));
+    }
+
     if (roomData["_room_preview" as keyof typeof roomData]) {
+      console.log('Using room preview image:', roomData["_room_preview" as keyof typeof roomData]);
       return roomData["_room_preview" as keyof typeof roomData];
     }
 
