@@ -31,7 +31,7 @@ export default function Quote() {
           <div className="flex items-center justify-between">
             <Link to="/wizard?step=5" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors">
               <ArrowLeft className="h-5 w-5" />
-              <span className="text-2xl font-bold">Boolean & Beyond</span>
+              <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
             <div className="hidden md:flex items-center space-x-4">
               <Button variant="outline" size="sm" className="flex items-center space-x-2">
