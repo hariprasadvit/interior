@@ -60,9 +60,9 @@ export default function Payment() {
           <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
             <CheckCircle className="h-10 w-10 text-emerald-600" />
           </div>
-          <h1 className="text-4xl font-bold text-brand-text mb-4">Your Design is Ready!</h1>
+          <h1 className="text-4xl font-bold text-brand-text mb-4">Thanks for Your Submission!</h1>
           <p className="text-lg text-brand-muted max-w-2xl mx-auto mb-8">
-            Review your complete interior design selections below
+            Get to know next steps in your design journey
           </p>
 
           {/* Premium CTA at top */}
@@ -95,7 +95,7 @@ export default function Payment() {
             {/* BHK and Style */}
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-                <Home className="h-6 w-6 text-brand-primary" />
+                <Home className="h-6 w-6 text-indigo-600" />
                 <div>
                   <p className="text-xl font-bold text-brand-text">{userSelections.bhkType}</p>
                   <p className="text-brand-muted">Apartment Type</p>
@@ -103,7 +103,7 @@ export default function Payment() {
               </div>
               
               <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-                <Palette className="h-6 w-6 text-brand-primary" />
+                <Palette className="h-6 w-6 text-indigo-600" />
                 <div>
                   <p className="text-xl font-bold text-brand-text">{userSelections.houseStyle}</p>
                   <p className="text-brand-muted">Design Style</p>
