@@ -9,7 +9,7 @@ export default function Index() {
       <nav className="relative z-10 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
-            <div className="text-3xl font-bold text-brand-text">Boolean & Beyond</div>
+            <div className="text-3xl font-bold text-brand-text">InteriorFlow</div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#about" className="text-brand-muted hover:text-brand-text transition-colors font-medium">About</a>
               <a href="#services" className="text-brand-muted hover:text-brand-text transition-colors font-medium">Services</a>
@@ -224,7 +224,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="text-3xl font-bold mb-6">Boolean & Beyond</div>
+              <div className="text-3xl font-bold mb-6">InteriorFlow</div>
               <p className="text-gray-300 leading-relaxed">Transforming spaces, creating dreams since 1998. Your trusted partner in interior design excellence.</p>
             </div>
             <div>
@@ -257,7 +257,7 @@ export default function Index() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Boolean & Beyond. All rights reserved. Made with ❤️ in India.</p>
+            <p>&copy; 2024 InteriorFlow. All rights reserved. Made with ❤️ in India.</p>
           </div>
         </div>
       </footer>
