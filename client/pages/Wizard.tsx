@@ -76,29 +76,29 @@ export default function Wizard() {
   ];
 
   const kitchenFields = [
-    { 
-      name: "slab", 
-      label: "Countertop Slab", 
-      options: getFilteredMaterials("slab", "kitchen", ["Granite Black", "Quartz White", "Marble Carrara"]),
-      type: "material" as const 
+    {
+      name: "slab",
+      label: "Countertop Slab",
+      options: ["Granite Black", "Quartz White", "Marble Carrara"],
+      type: "material" as const
     },
-    { 
-      name: "wallTile", 
-      label: "Wall Tile", 
-      options: getFilteredMaterials("wallTile", "kitchen", ["Subway Gloss", "Hex Matte", "Patterned Porcelain"]),
-      type: "material" as const 
+    {
+      name: "wallTile",
+      label: "Wall Tile",
+      options: ["Subway Gloss", "Hex Matte", "Patterned Porcelain"],
+      type: "material" as const
     },
-    { 
-      name: "doorKnob", 
-      label: "Cabinet Hardware", 
+    {
+      name: "doorKnob",
+      label: "Cabinet Hardware",
       options: ["Modern Handle", "Classic Knob", "Brushed Steel"],
-      type: "style" as const 
+      type: "style" as const
     },
-    { 
-      name: "sink", 
-      label: "Sink Style", 
+    {
+      name: "sink",
+      label: "Sink Style",
       options: ["Single Bowl", "Double Bowl", "Farmhouse"],
-      type: "style" as const 
+      type: "style" as const
     }
   ];
 
