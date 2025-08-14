@@ -133,6 +133,8 @@ export const imageMap = {
   "2BHK": {
     "Modern": {
       "living": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F2ac1102c4fa24711a900a4819cabe664?format=webp&width=800",
         // Use different tile images for 2BHK
         "Matte Porcelain": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Glossy Ceramic": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
