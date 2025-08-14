@@ -180,7 +180,7 @@ export default function Quote() {
 
                 <Button
                   onClick={() => navigate("/what-happens-next")}
-                  className="w-full h-12 bg-brand-primary hover:bg-brand-primary/90 text-white text-lg font-semibold rounded-xl"
+                  className="w-full h-12 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 text-white text-lg font-semibold rounded-xl shadow-lg transition-all"
                 >
                   Proceed with Project
                 </Button>
