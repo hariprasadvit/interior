@@ -87,7 +87,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
               <div className="bg-white p-8 h-full relative">
                 {/* Popular Badge for 2BHK */}
                 {option.type === "2BHK" && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                     POPULAR
                   </div>
                 )}
