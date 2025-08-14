@@ -49,17 +49,17 @@ export default function Wizard() {
   };
 
   const livingFields = [
-    { 
-      name: "tile", 
-      label: "Floor Tile Style", 
-      options: getFilteredMaterials("tile", "living", ["Matte Porcelain", "Glossy Ceramic", "Textured Stone"]),
-      type: "material" as const 
+    {
+      name: "tile",
+      label: "Floor Tile Style",
+      options: ["Matte Porcelain", "Glossy Ceramic", "Textured Stone"],
+      type: "material" as const
     },
-    { 
-      name: "paint", 
-      label: "Wall Paint Color", 
-      options: getFilteredMaterials("paint", "living", ["Warm White", "Greige", "Soft Beige", "Cool Grey"]),
-      type: "color" as const 
+    {
+      name: "paint",
+      label: "Wall Paint Color",
+      options: ["Warm White", "Greige", "Soft Beige", "Cool Grey"],
+      type: "color" as const
     },
     {
       name: "furniture",
@@ -67,11 +67,11 @@ export default function Wizard() {
       options: ["KIVIK Sofa", "EKTORP Sofa", "GLOSTAD Sofa"],
       type: "style" as const
     },
-    { 
-      name: "carpet", 
-      label: "Area Carpet", 
+    {
+      name: "carpet",
+      label: "Area Carpet",
       options: ["Persian Rug", "Modern Geometric", "Solid Color"],
-      type: "style" as const 
+      type: "style" as const
     }
   ];
 
