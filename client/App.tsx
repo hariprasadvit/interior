@@ -12,6 +12,7 @@ import OTP from "./pages/OTP";
 import Wizard from "./pages/Wizard";
 import Quote from "./pages/Quote";
 import Payment from "./pages/Payment";
+import WhatHappensNext from "./pages/WhatHappensNext";
 import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
 
