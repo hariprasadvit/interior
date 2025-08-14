@@ -1,8 +1,27 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { CheckCircle, Download, Calendar, Phone, Mail, Star, Award, Home, Palette, Eye, FileText, Users, MessageCircle } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import {
+  CheckCircle,
+  Download,
+  Calendar,
+  Phone,
+  Mail,
+  Star,
+  Award,
+  Home,
+  Palette,
+  Eye,
+  FileText,
+  Users,
+  MessageCircle,
+} from "lucide-react";
 
 export default function Success() {
   const [bookingId, setBookingId] = useState("");
@@ -12,13 +31,13 @@ export default function Success() {
   useEffect(() => {
     const id = `BB-${Math.floor(Math.random() * 900000) + 100000}`;
     setBookingId(id);
-    
+
     // Get user selections from localStorage
     const selections = localStorage.getItem("userSelections");
     if (selections) {
       setUserSelections(JSON.parse(selections));
     }
-    
+
     // Hide confetti after animation
     setTimeout(() => setShowConfetti(false), 3000);
   }, []);
@@ -36,10 +55,10 @@ export default function Success() {
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
+                animationDuration: `${2 + Math.random() * 3}s`,
               }}
             >
-              {['🎉', '✨', '🏠', '🎨', '💫'][Math.floor(Math.random() * 5)]}
+              {["🎉", "✨", "🏠", "🎨", "💫"][Math.floor(Math.random() * 5)]}
             </div>
           ))}
         </div>
@@ -65,25 +84,30 @@ export default function Success() {
             Your Design Journey Begins Now
           </h2>
           <p className="text-xl text-brand-muted mb-8 max-w-2xl mx-auto leading-relaxed">
-            Payment successful! Your booking is confirmed and our design team is ready to transform your space.
+            Payment successful! Your booking is confirmed and our design team is
+            ready to transform your space.
           </p>
-          
+
           {/* Booking Details */}
           <div className="bg-gradient-to-r from-brand-primary/10 to-green-100 rounded-3xl p-8 mb-12 max-w-2xl mx-auto shadow-lg">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="text-center">
                 <Award className="h-8 w-8 text-indigo-600 mx-auto mb-2" />
                 <p className="text-brand-muted mb-2">Booking Reference</p>
-                <p className="text-2xl font-bold text-indigo-600 font-mono">#{bookingId}</p>
+                <p className="text-2xl font-bold text-indigo-600 font-mono">
+                  #{bookingId}
+                </p>
               </div>
               <div className="text-center">
                 <Star className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
                 <p className="text-brand-muted mb-2">Premium Package</p>
-                <p className="text-lg font-bold text-brand-text">5% Advance Paid</p>
+                <p className="text-lg font-bold text-brand-text">
+                  5% Advance Paid
+                </p>
               </div>
             </div>
           </div>
-          
+
           {/* Quick Actions */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link to="/quote">
@@ -92,12 +116,18 @@ export default function Success() {
                 View My Quote
               </Button>
             </Link>
-            <Button variant="outline" className="px-8 py-4 text-lg rounded-xl border-2 flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all">
+            <Button
+              variant="outline"
+              className="px-8 py-4 text-lg rounded-xl border-2 flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all"
+            >
               <Download className="h-5 w-5" />
               <span>Download Receipt</span>
             </Button>
             <Link to="/">
-              <Button variant="outline" className="px-8 py-4 text-lg rounded-xl border-2 shadow-lg hover:shadow-xl transition-all">
+              <Button
+                variant="outline"
+                className="px-8 py-4 text-lg rounded-xl border-2 shadow-lg hover:shadow-xl transition-all"
+              >
                 <Home className="mr-2 h-5 w-5" />
                 Back to Home
               </Button>
@@ -120,12 +150,16 @@ export default function Success() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-4 rounded-xl text-center">
                     <Home className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                    <p className="text-lg font-bold text-blue-900">{userSelections.bhkType}</p>
+                    <p className="text-lg font-bold text-blue-900">
+                      {userSelections.bhkType}
+                    </p>
                     <p className="text-sm text-blue-700">Apartment</p>
                   </div>
                   <div className="bg-gradient-to-br from-purple-50 to-pink-100 p-4 rounded-xl text-center">
                     <Palette className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-                    <p className="text-lg font-bold text-purple-900">{userSelections.houseStyle}</p>
+                    <p className="text-lg font-bold text-purple-900">
+                      {userSelections.houseStyle}
+                    </p>
                     <p className="text-sm text-purple-700">Style</p>
                   </div>
                 </div>
@@ -133,7 +167,7 @@ export default function Success() {
                 {/* Room Details */}
                 <div className="space-y-4">
                   <h4 className="font-bold text-brand-text">Room Selections</h4>
-                  
+
                   {/* Living Room */}
                   <div className="bg-blue-50 p-4 rounded-xl border-l-4 border-blue-500">
                     <h5 className="font-semibold text-blue-900 mb-3 flex items-center space-x-2">
@@ -141,12 +175,18 @@ export default function Success() {
                       <span>Living Room</span>
                     </h5>
                     <div className="grid grid-cols-2 gap-2 text-sm">
-                      {Object.entries(userSelections.living).map(([key, value]) => (
-                        <div key={key} className="flex justify-between">
-                          <span className="text-blue-700 capitalize">{key}:</span>
-                          <span className="text-blue-900 font-medium">{value as string}</span>
-                        </div>
-                      ))}
+                      {Object.entries(userSelections.living).map(
+                        ([key, value]) => (
+                          <div key={key} className="flex justify-between">
+                            <span className="text-blue-700 capitalize">
+                              {key}:
+                            </span>
+                            <span className="text-blue-900 font-medium">
+                              {value as string}
+                            </span>
+                          </div>
+                        ),
+                      )}
                     </div>
                   </div>
 
@@ -157,14 +197,21 @@ export default function Success() {
                       <span>Kitchen</span>
                     </h5>
                     <div className="grid grid-cols-2 gap-2 text-sm">
-                      {Object.entries(userSelections.kitchen).map(([key, value]) => (
-                        <div key={key} className="flex justify-between">
-                          <span className="text-orange-700 capitalize">
-                            {key.replace('wallTile', 'Wall Tile').replace('doorKnob', 'Hardware')}:
-                          </span>
-                          <span className="text-orange-900 font-medium">{value as string}</span>
-                        </div>
-                      ))}
+                      {Object.entries(userSelections.kitchen).map(
+                        ([key, value]) => (
+                          <div key={key} className="flex justify-between">
+                            <span className="text-orange-700 capitalize">
+                              {key
+                                .replace("wallTile", "Wall Tile")
+                                .replace("doorKnob", "Hardware")}
+                              :
+                            </span>
+                            <span className="text-orange-900 font-medium">
+                              {value as string}
+                            </span>
+                          </div>
+                        ),
+                      )}
                     </div>
                   </div>
 
@@ -175,14 +222,18 @@ export default function Success() {
                       <span>Bedroom</span>
                     </h5>
                     <div className="grid grid-cols-2 gap-2 text-sm">
-                      {Object.entries(userSelections.bedroom).map(([key, value]) => (
-                        <div key={key} className="flex justify-between">
-                          <span className="text-purple-700 capitalize">
-                            {key.replace('bedroomPaint', 'Paint')}:
-                          </span>
-                          <span className="text-purple-900 font-medium">{value as string}</span>
-                        </div>
-                      ))}
+                      {Object.entries(userSelections.bedroom).map(
+                        ([key, value]) => (
+                          <div key={key} className="flex justify-between">
+                            <span className="text-purple-700 capitalize">
+                              {key.replace("bedroomPaint", "Paint")}:
+                            </span>
+                            <span className="text-purple-900 font-medium">
+                              {value as string}
+                            </span>
+                          </div>
+                        ),
+                      )}
                     </div>
                   </div>
                 </div>
@@ -205,42 +256,57 @@ export default function Success() {
                     <span className="text-white font-bold">1</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-brand-text mb-2">Designer Contact</h3>
+                    <h3 className="font-semibold text-brand-text mb-2">
+                      Designer Contact
+                    </h3>
                     <p className="text-brand-muted text-sm mb-2">
-                      Our senior designer will call you within 24 hours to discuss your project
+                      Our senior designer will call you within 24 hours to
+                      discuss your project
                     </p>
                     <div className="bg-green-100 px-3 py-1 rounded-full inline-block">
-                      <span className="text-xs text-green-800 font-medium">Expected: Today by 6 PM</span>
+                      <span className="text-xs text-green-800 font-medium">
+                        Expected: Today by 6 PM
+                      </span>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                     <span className="text-white font-bold">2</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-brand-text mb-2">3D Visualization</h3>
+                    <h3 className="font-semibold text-brand-text mb-2">
+                      3D Visualization
+                    </h3>
                     <p className="text-brand-muted text-sm mb-2">
-                      We'll create 3D renders of your selected design and materials
+                      We'll create 3D renders of your selected design and
+                      materials
                     </p>
                     <div className="bg-blue-100 px-3 py-1 rounded-full inline-block">
-                      <span className="text-xs text-blue-800 font-medium">Expected: Within 2-3 days</span>
+                      <span className="text-xs text-blue-800 font-medium">
+                        Expected: Within 2-3 days
+                      </span>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                     <span className="text-white font-bold">3</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-brand-text mb-2">Site Visit & Final Quote</h3>
+                    <h3 className="font-semibold text-brand-text mb-2">
+                      Site Visit & Final Quote
+                    </h3>
                     <p className="text-brand-muted text-sm mb-2">
-                      On-site measurements, final material selection, and detailed BOQ
+                      On-site measurements, final material selection, and
+                      detailed BOQ
                     </p>
                     <div className="bg-purple-100 px-3 py-1 rounded-full inline-block">
-                      <span className="text-xs text-purple-800 font-medium">Expected: Within 1 week</span>
+                      <span className="text-xs text-purple-800 font-medium">
+                        Expected: Within 1 week
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -250,7 +316,9 @@ export default function Success() {
                 <div className="flex items-start space-x-3">
                   <Star className="h-6 w-6 text-yellow-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-yellow-900 mb-2">Premium Benefits Unlocked!</h4>
+                    <h4 className="font-semibold text-yellow-900 mb-2">
+                      Premium Benefits Unlocked!
+                    </h4>
                     <ul className="text-sm text-yellow-800 space-y-1">
                       <li>✨ Priority project scheduling</li>
                       <li>🎨 Free 3D visualization (₹15,000 value)</li>
@@ -279,9 +347,15 @@ export default function Success() {
                   <span className="text-white font-bold">AD</span>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-brand-text">Ananya Desai</h4>
-                  <p className="text-sm text-brand-muted">Senior Interior Designer</p>
-                  <p className="text-xs text-brand-muted">8+ years experience</p>
+                  <h4 className="font-semibold text-brand-text">
+                    Ananya Desai
+                  </h4>
+                  <p className="text-sm text-brand-muted">
+                    Senior Interior Designer
+                  </p>
+                  <p className="text-xs text-brand-muted">
+                    8+ years experience
+                  </p>
                 </div>
               </div>
 
@@ -292,11 +366,15 @@ export default function Success() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-indigo-600" />
-                  <span className="text-brand-text">ananya@booleanbeyond.com</span>
+                  <span className="text-brand-text">
+                    ananya@booleanbeyond.com
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MessageCircle className="h-5 w-5 text-indigo-600" />
-                  <span className="text-brand-text">WhatsApp: +91 9876-543-211</span>
+                  <span className="text-brand-text">
+                    WhatsApp: +91 9876-543-211
+                  </span>
                 </div>
               </div>
             </CardContent>
@@ -304,7 +382,9 @@ export default function Success() {
 
           <Card className="shadow-lg border-0 bg-white/95 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-xl text-brand-text">Important Documents</CardTitle>
+              <CardTitle className="text-xl text-brand-text">
+                Important Documents
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-3">
@@ -324,8 +404,9 @@ export default function Success() {
 
               <div className="bg-blue-50 p-4 rounded-xl border border-blue-200">
                 <p className="text-sm text-blue-800">
-                  💡 <strong>Keep these handy:</strong> All documents are also emailed to you. 
-                  Save our contact details for quick communication!
+                  💡 <strong>Keep these handy:</strong> All documents are also
+                  emailed to you. Save our contact details for quick
+                  communication!
                 </p>
               </div>
             </CardContent>
@@ -338,17 +419,26 @@ export default function Success() {
             Thank You for Choosing InteriorFlow
           </h3>
           <p className="text-brand-muted max-w-3xl mx-auto leading-relaxed text-lg">
-            We're excited to transform your <strong>{userSelections?.bhkType} {userSelections?.houseStyle}</strong> space into something extraordinary. 
-            Our team of expert designers is ready to bring your vision to life with 
-            precision, creativity, and unmatched attention to detail.
+            We're excited to transform your{" "}
+            <strong>
+              {userSelections?.bhkType} {userSelections?.houseStyle}
+            </strong>{" "}
+            space into something extraordinary. Our team of expert designers is
+            ready to bring your vision to life with precision, creativity, and
+            unmatched attention to detail.
           </p>
           <div className="mt-8 flex justify-center items-center space-x-4">
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-6 w-6 text-yellow-500 fill-current" />
+                <Star
+                  key={i}
+                  className="h-6 w-6 text-yellow-500 fill-current"
+                />
               ))}
             </div>
-            <span className="text-brand-muted text-lg">Rated 4.9/5 by 500+ customers</span>
+            <span className="text-brand-muted text-lg">
+              Rated 4.9/5 by 500+ customers
+            </span>
           </div>
         </div>
       </div>

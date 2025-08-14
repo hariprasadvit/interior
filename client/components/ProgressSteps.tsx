@@ -12,7 +12,7 @@ export function ProgressSteps({ steps, current }: ProgressStepsProps) {
             const stepNumber = index + 1;
             const isActive = stepNumber === current;
             const isCompleted = stepNumber < current;
-            
+
             return (
               <div key={index} className="flex items-center">
                 <div className="flex flex-col items-center">
@@ -21,18 +21,22 @@ export function ProgressSteps({ steps, current }: ProgressStepsProps) {
                       isActive
                         ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
                         : isCompleted
-                        ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white"
-                        : "bg-gray-200 text-brand-muted"
+                          ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white"
+                          : "bg-gray-200 text-brand-muted"
                     }`}
                   >
                     {isCompleted ? "✓" : stepNumber}
                   </div>
-                  <span className={`mt-2 text-sm ${isActive ? "text-indigo-600 font-semibold" : "text-brand-muted"}`}>
+                  <span
+                    className={`mt-2 text-sm ${isActive ? "text-indigo-600 font-semibold" : "text-brand-muted"}`}
+                  >
                     {step}
                   </span>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className={`flex-1 h-0.5 mx-4 ${isCompleted ? "bg-green-500" : "bg-gray-200"}`} />
+                  <div
+                    className={`flex-1 h-0.5 mx-4 ${isCompleted ? "bg-green-500" : "bg-gray-200"}`}
+                  />
                 )}
               </div>
             );

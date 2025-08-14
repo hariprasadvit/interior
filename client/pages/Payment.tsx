@@ -1,12 +1,25 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { ArrowLeft, CheckCircle, Home, Palette, Eye, ArrowRight } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import {
+  ArrowLeft,
+  CheckCircle,
+  Home,
+  Palette,
+  Eye,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Payment() {
   const navigate = useNavigate();
-  
+
   // Get user selections from localStorage or state management
   const userSelections = {
     bhkType: "2BHK",
@@ -15,21 +28,21 @@ export default function Payment() {
       tile: "Matte Porcelain",
       paint: "Warm White",
       furniture: "KIVIK Sofa",
-      carpet: "Modern Geometric"
+      carpet: "Modern Geometric",
     },
     kitchen: {
       slab: "Quartz White",
       wallTile: "Subway Gloss",
       doorKnob: "Modern Handle",
-      sink: "Single Bowl"
+      sink: "Single Bowl",
     },
     bedroom: {
       flooring: "Wood Laminate",
       bedroomPaint: "Calming Blue",
       wardrobe: "Matte Laminate",
       lighting: "Warm Recessed",
-      bed: "Platform Bed"
-    }
+      bed: "Platform Bed",
+    },
   };
 
   const handleProceed = () => {
@@ -43,7 +56,10 @@ export default function Payment() {
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/quote" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors">
+            <Link
+              to="/quote"
+              className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors"
+            >
               <ArrowLeft className="h-5 w-5" />
               <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
@@ -60,7 +76,9 @@ export default function Payment() {
           <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
             <CheckCircle className="h-10 w-10 text-emerald-600" />
           </div>
-          <h1 className="text-4xl font-bold text-brand-text mb-4">Thanks for Your Submission!</h1>
+          <h1 className="text-4xl font-bold text-brand-text mb-4">
+            Thanks for Your Submission!
+          </h1>
           <p className="text-lg text-brand-muted max-w-2xl mx-auto mb-8">
             Get to know next steps in your design journey
           </p>
@@ -88,7 +106,8 @@ export default function Payment() {
               <span>Complete Design Summary</span>
             </CardTitle>
             <CardDescription className="text-lg">
-              Your personalized {userSelections.bhkType} interior in {userSelections.houseStyle} style
+              Your personalized {userSelections.bhkType} interior in{" "}
+              {userSelections.houseStyle} style
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-8">
@@ -97,15 +116,19 @@ export default function Payment() {
               <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
                 <Home className="h-6 w-6 text-indigo-600" />
                 <div>
-                  <p className="text-xl font-bold text-brand-text">{userSelections.bhkType}</p>
+                  <p className="text-xl font-bold text-brand-text">
+                    {userSelections.bhkType}
+                  </p>
                   <p className="text-brand-muted">Apartment Type</p>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
                 <Palette className="h-6 w-6 text-indigo-600" />
                 <div>
-                  <p className="text-xl font-bold text-brand-text">{userSelections.houseStyle}</p>
+                  <p className="text-xl font-bold text-brand-text">
+                    {userSelections.houseStyle}
+                  </p>
                   <p className="text-brand-muted">Design Style</p>
                 </div>
               </div>
@@ -113,19 +136,27 @@ export default function Payment() {
 
             {/* Room by Room Breakdown */}
             <div className="space-y-6">
-              <h3 className="text-xl font-bold text-brand-text text-center">Room-by-Room Selections</h3>
-              
+              <h3 className="text-xl font-bold text-brand-text text-center">
+                Room-by-Room Selections
+              </h3>
+
               {/* Living Room */}
               <div className="border border-blue-200 rounded-xl p-6 bg-blue-50/50">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                  <h4 className="text-lg font-bold text-brand-text">Living Room</h4>
+                  <h4 className="text-lg font-bold text-brand-text">
+                    Living Room
+                  </h4>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                   {Object.entries(userSelections.living).map(([key, value]) => (
                     <div key={key} className="bg-white p-3 rounded-lg">
                       <p className="text-sm font-medium text-brand-muted capitalize">
-                        {key === 'tile' ? 'Floor Tile' : key === 'paint' ? 'Wall Paint' : key}
+                        {key === "tile"
+                          ? "Floor Tile"
+                          : key === "paint"
+                            ? "Wall Paint"
+                            : key}
                       </p>
                       <p className="text-brand-text font-semibold">{value}</p>
                     </div>
@@ -140,14 +171,22 @@ export default function Payment() {
                   <h4 className="text-lg font-bold text-brand-text">Kitchen</h4>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {Object.entries(userSelections.kitchen).map(([key, value]) => (
-                    <div key={key} className="bg-white p-3 rounded-lg">
-                      <p className="text-sm font-medium text-brand-muted capitalize">
-                        {key === 'slab' ? 'Countertop' : key === 'wallTile' ? 'Wall Tile' : key === 'doorKnob' ? 'Cabinet Hardware' : key}
-                      </p>
-                      <p className="text-brand-text font-semibold">{value}</p>
-                    </div>
-                  ))}
+                  {Object.entries(userSelections.kitchen).map(
+                    ([key, value]) => (
+                      <div key={key} className="bg-white p-3 rounded-lg">
+                        <p className="text-sm font-medium text-brand-muted capitalize">
+                          {key === "slab"
+                            ? "Countertop"
+                            : key === "wallTile"
+                              ? "Wall Tile"
+                              : key === "doorKnob"
+                                ? "Cabinet Hardware"
+                                : key}
+                        </p>
+                        <p className="text-brand-text font-semibold">{value}</p>
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
 
@@ -158,21 +197,25 @@ export default function Payment() {
                   <h4 className="text-lg font-bold text-brand-text">Bedroom</h4>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
-                  {Object.entries(userSelections.bedroom).map(([key, value]) => (
-                    <div key={key} className="bg-white p-3 rounded-lg">
-                      <p className="text-sm font-medium text-brand-muted capitalize">
-                        {key === 'bedroomPaint' ? 'Wall Paint' : key}
-                      </p>
-                      <p className="text-brand-text font-semibold">{value}</p>
-                    </div>
-                  ))}
+                  {Object.entries(userSelections.bedroom).map(
+                    ([key, value]) => (
+                      <div key={key} className="bg-white p-3 rounded-lg">
+                        <p className="text-sm font-medium text-brand-muted capitalize">
+                          {key === "bedroomPaint" ? "Wall Paint" : key}
+                        </p>
+                        <p className="text-brand-text font-semibold">{value}</p>
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
             </div>
 
             {/* What's Included */}
             <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl">
-              <h4 className="font-bold text-brand-text mb-4 text-center">What's Included in Your Project</h4>
+              <h4 className="font-bold text-brand-text mb-4 text-center">
+                What's Included in Your Project
+              </h4>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   "Complete material procurement",
@@ -182,7 +225,7 @@ export default function Payment() {
                   "3D design visualization",
                   "Site measurement & planning",
                   "Project management support",
-                  "Final quality inspection"
+                  "Final quality inspection",
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
@@ -191,7 +234,6 @@ export default function Payment() {
                 ))}
               </div>
             </div>
-
           </CardContent>
         </Card>
       </div>

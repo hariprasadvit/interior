@@ -2,326 +2,496 @@
 // Using actual product images from Unsplash with specific search terms
 export const imageMap = {
   "1BHK": {
-    "Modern": {
-      "living": {
+    Modern: {
+      living: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
         // Floor Tiles - Actual tile closeup images
-        "Matte Porcelain": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Glossy Ceramic": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Matte Porcelain":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Glossy Ceramic":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Textured Stone":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Paint colors - Paint color swatches
-        "Warm White": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Greige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Soft Beige": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Cool Grey": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Warm White":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        Greige:
+          "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Soft Beige":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Cool Grey":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // IKEA Three-Seat Sofas - Individual sofa product images
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "KIVIK Sofa":
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "EKTORP Sofa":
+          "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "GLOSTAD Sofa":
+          "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Carpet - Rug texture closeups
-        "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Solid Color": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
+        "Persian Rug":
+          "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Modern Geometric":
+          "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Solid Color":
+          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         // Kitchen countertops - Different slab materials
-        "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Marble Carrara": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Quartz White":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Marble Carrara":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Wall tiles - Different tile patterns
-        "Subway Gloss": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Hex Matte": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Patterned Porcelain": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Subway Gloss":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Hex Matte":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Patterned Porcelain":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Cabinet hardware - Different handle styles
-        "Modern Handle": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Classic Knob": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Brushed Steel": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Modern Handle":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Classic Knob":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Brushed Steel":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Sink styles - Different sink types
-        "Single Bowl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Double Bowl": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Farmhouse": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
+        "Single Bowl":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Double Bowl":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        Farmhouse:
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         // Flooring - Different flooring types
-        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Vitrified Tile": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Engineered Wood": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Wood Laminate":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Vitrified Tile":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Engineered Wood":
+          "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Paint colors - Different bedroom wall colors
-        "Calming Blue": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Warm Taupe": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Ivory": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Calming Blue":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Warm Taupe":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        Ivory:
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Wardrobe - Different wardrobe finishes
-        "Matte Laminate": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "High-Gloss Laminate": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Veneer": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Matte Laminate":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "High-Gloss Laminate":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        Veneer:
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Lighting - Different lighting styles
-        "Warm Recessed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Pendant": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Cove": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Warm Recessed":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        Pendant:
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        Cove: "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Bed types - Different bed styles
-        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Storage Bed": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Four Poster": "https://images.unsplash.com/photo-1515263487990-61b07816b24f?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
-      }
+        "Platform Bed":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Storage Bed":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Four Poster":
+          "https://images.unsplash.com/photo-1515263487990-61b07816b24f?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+      },
     },
-    "Minimalist": {
-      "living": {
+    Minimalist: {
+      living: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
         // Floor tiles with minimalist filter
-        "Matte Porcelain": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "Glossy Ceramic": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Matte Porcelain":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Glossy Ceramic":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Textured Stone":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
         // Paint colors with minimalist treatment
-        "Warm White": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "Greige": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "Soft Beige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "Cool Grey": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        "Warm White":
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        Greige:
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        "Soft Beige":
+          "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        "Cool Grey":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
         // IKEA Three-Seat Sofas - Minimalist style
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80",
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80"
+        "KIVIK Sofa":
+          "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80",
+        "EKTORP Sofa":
+          "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80",
+        "GLOSTAD Sofa":
+          "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "Marble Carrara": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Quartz White":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Marble Carrara":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "Vitrified Tile": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "Calming Blue": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
-        "Storage Bed": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60"
-      }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Wood Laminate":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Vitrified Tile":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Calming Blue":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Platform Bed":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+        "Storage Bed":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
+      },
     },
-    "Traditional": {
-      "living": {
-        "Warm White": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
-        "Greige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
-        "Soft Beige": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=30&q=80",
-        "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=30"
+    Traditional: {
+      living: {
+        "Warm White":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+        Greige:
+          "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+        "Soft Beige":
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+        "EKTORP Sofa":
+          "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=30&q=80",
+        "Persian Rug":
+          "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=30",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
-        "Quartz White": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
-        "Farmhouse": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+        "Quartz White":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+        Farmhouse:
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
-        "Warm Taupe": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
-        "Four Poster": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40"
-      }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Wood Laminate":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+        "Warm Taupe":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+        "Four Poster":
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
+      },
     },
-    "Industrial": {
-      "living": {
-        "Cool Grey": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
-        "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30&q=80"
+    Industrial: {
+      living: {
+        "Cool Grey":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
+        "Textured Stone":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
+        "GLOSTAD Sofa":
+          "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30&q=80",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
-        "Hex Matte": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
-        "Brushed Steel": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
+        "Hex Matte":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
+        "Brushed Steel":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Engineered Wood": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
-        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30"
-      }
-    }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Engineered Wood":
+          "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
+        "Platform Bed":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
+      },
+    },
   },
   "2BHK": {
-    "Modern": {
-      "living": {
+    Modern: {
+      living: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
         // Use different tile images for 2BHK
-        "Matte Porcelain": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Glossy Ceramic": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Warm White": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Greige": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Soft Beige": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Cool Grey": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
+        "Matte Porcelain":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Glossy Ceramic":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Textured Stone":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Warm White":
+          "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        Greige:
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Soft Beige":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Cool Grey":
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "KIVIK Sofa":
+          "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "GLOSTAD Sofa":
+          "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Modern Geometric":
+          "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Quartz White": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Marble Carrara": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Subway Gloss": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Modern Handle": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Single Bowl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Quartz White":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Marble Carrara":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Subway Gloss":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Modern Handle":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Single Bowl":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Vitrified Tile": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Calming Blue": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Storage Bed": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
-      }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Wood Laminate":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Vitrified Tile":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Calming Blue":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Platform Bed":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Storage Bed":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+      },
     },
-    "Minimalist": {
-      "living": {
-        "Matte Porcelain": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "Warm White": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "Cool Grey": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70&q=80"
+    Minimalist: {
+      living: {
+        "Matte Porcelain":
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        "Warm White":
+          "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        "Cool Grey":
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        "KIVIK Sofa":
+          "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70&q=80",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Quartz White": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "Marble Carrara": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Quartz White":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        "Marble Carrara":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
-        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70"
-      }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Wood Laminate":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+        "Platform Bed":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
+      },
     },
-    "Traditional": {
-      "living": {
-        "Warm White": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40&q=80",
-        "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40"
+    Traditional: {
+      living: {
+        "Warm White":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
+        "EKTORP Sofa":
+          "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40&q=80",
+        "Persian Rug":
+          "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
-        "Farmhouse": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
+        Farmhouse:
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
-        "Four Poster": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50"
-      }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Wood Laminate":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
+        "Four Poster":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
+      },
     },
-    "Industrial": {
-      "living": {
-        "Cool Grey": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40",
-        "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40"
+    Industrial: {
+      living: {
+        "Cool Grey":
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40",
+        "Textured Stone":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Engineered Wood": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40"
-      }
-    }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Engineered Wood":
+          "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40",
+      },
+    },
   },
   "3BHK": {
-    "Modern": {
-      "living": {
-        "Matte Porcelain": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Glossy Ceramic": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Warm White": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Cool Grey": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
+    Modern: {
+      living: {
+        "Matte Porcelain":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Glossy Ceramic":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Warm White":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Cool Grey":
+          "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "GLOSTAD Sofa":
+          "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Modern Geometric":
+          "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Modern Handle": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Double Bowl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Quartz White":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Modern Handle":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Double Bowl":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Calming Blue": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
-        "Storage Bed": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
-      }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Wood Laminate":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Calming Blue":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+        "Storage Bed":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+      },
     },
-    "Minimalist": {
-      "living": {
-        "Warm White": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80",
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80&q=80"
+    Minimalist: {
+      living: {
+        "Warm White":
+          "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80",
+        "KIVIK Sofa":
+          "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80&q=80",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Quartz White":
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80"
-      }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Platform Bed":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80",
+      },
     },
-    "Traditional": {
-      "living": {
-        "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60&q=80",
-        "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60"
+    Traditional: {
+      living: {
+        "EKTORP Sofa":
+          "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60&q=80",
+        "Persian Rug":
+          "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Four Poster": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60"
-      }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Four Poster":
+          "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60",
+      },
     },
-    "Industrial": {
-      "living": {
-        "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50"
+    Industrial: {
+      living: {
+        "Textured Stone":
+          "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50",
       },
-      "kitchen": {
+      kitchen: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-        "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50"
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+        "Granite Black":
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50",
       },
-      "bedroom": {
+      bedroom: {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
-        "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50"
-      }
-    }
-  }
+        _room_preview:
+          "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
+        "Platform Bed":
+          "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50",
+      },
+    },
+  },
 };
 
 // Reliable fallback images for each room type with proper Unsplash URLs
 const defaultImages = {
-  "living": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
-  "kitchen": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
-  "bedroom": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800"
+  living:
+    "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
+  kitchen:
+    "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
+  bedroom:
+    "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
 };
 
 /**
@@ -333,32 +503,48 @@ export function getRoomImage(
   bhkType: string,
   houseStyle: string,
   roomName: string,
-  selectedMaterial?: string
+  selectedMaterial?: string,
 ): string {
   // Validate inputs
   if (!bhkType || !houseStyle || !roomName) {
-    return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
+    return (
+      defaultImages[roomName as keyof typeof defaultImages] ||
+      defaultImages.living
+    );
   }
 
   try {
     // Navigate through the imageMap structure
     const bhkData = imageMap[bhkType as keyof typeof imageMap];
     if (!bhkData) {
-      return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
+      return (
+        defaultImages[roomName as keyof typeof defaultImages] ||
+        defaultImages.living
+      );
     }
 
     const styleData = bhkData[houseStyle as keyof typeof bhkData];
     if (!styleData) {
-      return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
+      return (
+        defaultImages[roomName as keyof typeof defaultImages] ||
+        defaultImages.living
+      );
     }
 
     const roomData = styleData[roomName as keyof typeof styleData];
     if (!roomData) {
-      return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
+      return (
+        defaultImages[roomName as keyof typeof defaultImages] ||
+        defaultImages.living
+      );
     }
 
     // If a specific material is selected, try to get its image
-    if (selectedMaterial && selectedMaterial !== "_room_preview" && roomData[selectedMaterial as keyof typeof roomData]) {
+    if (
+      selectedMaterial &&
+      selectedMaterial !== "_room_preview" &&
+      roomData[selectedMaterial as keyof typeof roomData]
+    ) {
       return roomData[selectedMaterial as keyof typeof roomData];
     }
 
@@ -368,18 +554,33 @@ export function getRoomImage(
     }
 
     // Otherwise, return the first available image for this room in this BHK + style
-    const firstImageKey = Object.keys(roomData).filter(key => key !== "_room_preview")[0];
-    return roomData[firstImageKey as keyof typeof roomData] || defaultImages[roomName as keyof typeof defaultImages];
+    const firstImageKey = Object.keys(roomData).filter(
+      (key) => key !== "_room_preview",
+    )[0];
+    return (
+      roomData[firstImageKey as keyof typeof roomData] ||
+      defaultImages[roomName as keyof typeof defaultImages]
+    );
   } catch (error) {
-    console.warn(`Failed to get room image for ${bhkType} ${houseStyle} ${roomName}:`, error);
-    return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
+    console.warn(
+      `Failed to get room image for ${bhkType} ${houseStyle} ${roomName}:`,
+      error,
+    );
+    return (
+      defaultImages[roomName as keyof typeof defaultImages] ||
+      defaultImages.living
+    );
   }
 }
 
 /**
  * Get all available materials for a specific BHK + style + room combination
  */
-export function getAvailableMaterials(bhkType: string, houseStyle: string, roomName: string): string[] {
+export function getAvailableMaterials(
+  bhkType: string,
+  houseStyle: string,
+  roomName: string,
+): string[] {
   try {
     const bhkData = imageMap[bhkType as keyof typeof imageMap];
     if (!bhkData) return [];
@@ -392,7 +593,10 @@ export function getAvailableMaterials(bhkType: string, houseStyle: string, roomN
 
     return Object.keys(roomData);
   } catch (error) {
-    console.warn(`Failed to get available materials for ${bhkType} ${houseStyle} ${roomName}:`, error);
+    console.warn(
+      `Failed to get available materials for ${bhkType} ${houseStyle} ${roomName}:`,
+      error,
+    );
     return [];
   }
 }
@@ -401,13 +605,17 @@ export function getAvailableMaterials(bhkType: string, houseStyle: string, roomN
  * Check if a material combination is available for the selected BHK + style
  */
 export function isMaterialAvailable(
-  bhkType: string, 
-  houseStyle: string, 
-  roomName: string, 
-  material: string
+  bhkType: string,
+  houseStyle: string,
+  roomName: string,
+  material: string,
 ): boolean {
   try {
-    const availableMaterials = getAvailableMaterials(bhkType, houseStyle, roomName);
+    const availableMaterials = getAvailableMaterials(
+      bhkType,
+      houseStyle,
+      roomName,
+    );
     return availableMaterials.includes(material);
   } catch (error) {
     console.warn(`Failed to check material availability:`, error);

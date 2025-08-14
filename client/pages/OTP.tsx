@@ -1,7 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
 import { useToast } from "../hooks/use-toast";
 import { ArrowLeft, Shield, RefreshCw, CheckCircle, Timer } from "lucide-react";
 
@@ -25,7 +31,7 @@ export default function OTP() {
 
   const handleOtpChange = (index: number, value: string) => {
     if (value.length > 1) return;
-    
+
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
@@ -37,7 +43,7 @@ export default function OTP() {
   };
 
   const handleKeyDown = (index: number, e: React.KeyboardEvent) => {
-    if (e.key === 'Backspace' && !otp[index] && index > 0) {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
       inputRefs.current[index - 1]?.focus();
     }
   };
@@ -52,9 +58,9 @@ export default function OTP() {
       });
       return;
     }
-    
+
     setIsVerifying(true);
-    
+
     // Simulate verification process
     setTimeout(() => {
       localStorage.setItem("isAuthenticated", "true");
@@ -69,12 +75,12 @@ export default function OTP() {
 
   const handleResendOTP = () => {
     if (!canResend) return;
-    
+
     setTimeLeft(30);
     setCanResend(false);
     setOtp(["", "", "", "", "", ""]);
     inputRefs.current[0]?.focus();
-    
+
     toast({
       title: "OTP Resent",
       description: "A new verification code has been sent",
@@ -84,7 +90,7 @@ export default function OTP() {
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
   return (
@@ -93,7 +99,10 @@ export default function OTP() {
       <div className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/auth" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors group">
+            <Link
+              to="/auth"
+              className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors group"
+            >
               <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
               <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
@@ -114,7 +123,9 @@ export default function OTP() {
               <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <Shield className="h-12 w-12 text-white" />
               </div>
-              <CardTitle className="text-3xl text-brand-text mb-3 font-bold">Verify Your Identity</CardTitle>
+              <CardTitle className="text-3xl text-brand-text mb-3 font-bold">
+                Verify Your Identity
+              </CardTitle>
               <CardDescription className="text-lg text-brand-muted leading-relaxed">
                 📱 <strong>Demo:</strong> Enter any 6-digit code to continue
               </CardDescription>
@@ -124,7 +135,7 @@ export default function OTP() {
                 </span>
               </div>
             </CardHeader>
-            
+
             <CardContent className="px-8 pb-12 space-y-8">
               {/* OTP Input */}
               <div>
@@ -135,20 +146,25 @@ export default function OTP() {
                   {otp.map((digit, index) => (
                     <input
                       key={index}
-                      ref={(el) => inputRefs.current[index] = el}
+                      ref={(el) => (inputRefs.current[index] = el)}
                       type="text"
                       inputMode="numeric"
                       pattern="[0-9]*"
                       maxLength={1}
                       value={digit}
-                      onChange={(e) => handleOtpChange(index, e.target.value.replace(/\D/g, ''))}
+                      onChange={(e) =>
+                        handleOtpChange(
+                          index,
+                          e.target.value.replace(/\D/g, ""),
+                        )
+                      }
                       onKeyDown={(e) => handleKeyDown(index, e)}
                       className="w-14 h-16 text-center text-2xl font-bold border-2 border-gray-200 rounded-xl focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 focus:outline-none transition-all bg-gray-50 focus:bg-white"
                     />
                   ))}
                 </div>
               </div>
-              
+
               <Button
                 onClick={handleVerifyOTP}
                 disabled={otp.join("").length !== 6 || isVerifying}
@@ -163,7 +179,7 @@ export default function OTP() {
                   "Verify & Continue"
                 )}
               </Button>
-              
+
               {/* Resend Section */}
               <div className="text-center space-y-4">
                 {!canResend ? (
@@ -190,9 +206,12 @@ export default function OTP() {
                 <div className="flex items-start space-x-3">
                   <Shield className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div className="text-sm">
-                    <p className="font-semibold text-blue-900 mb-2">Security Notice</p>
+                    <p className="font-semibold text-blue-900 mb-2">
+                      Security Notice
+                    </p>
                     <p className="text-blue-800 leading-relaxed">
-                      Never share this code with anyone. InteriorFlow will never ask for your OTP over phone or email.
+                      Never share this code with anyone. InteriorFlow will never
+                      ask for your OTP over phone or email.
                     </p>
                   </div>
                 </div>
@@ -215,7 +234,9 @@ export default function OTP() {
 
           {/* Benefits Reminder */}
           <div className="mt-8 bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100">
-            <h3 className="text-base font-bold text-brand-text mb-3 text-center">Almost there!</h3>
+            <h3 className="text-base font-bold text-brand-text mb-3 text-center">
+              Almost there!
+            </h3>
             <div className="flex items-center justify-center space-x-6 text-sm text-brand-muted">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />

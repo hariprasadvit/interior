@@ -14,44 +14,73 @@ interface HouseStyleSelectionProps {
   bhkType: string;
 }
 
-export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleSelectionProps) {
+export function HouseStyleSelection({
+  selected,
+  onSelect,
+  bhkType,
+}: HouseStyleSelectionProps) {
   const styleOptions: StyleOption[] = [
     {
       value: "Modern",
       title: "Modern Contemporary",
       description: "Clean lines, open spaces, and sophisticated minimalism",
-      characteristics: ["Neutral color schemes", "Geometric patterns", "High-tech materials", "Open floor plans"],
+      characteristics: [
+        "Neutral color schemes",
+        "Geometric patterns",
+        "High-tech materials",
+        "Open floor plans",
+      ],
       colorPalette: ["#2C2C2C", "#F5F5F5", "#E8E8E8", "#4A90E2"],
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=400&fit=crop&auto=enhance",
-      mood: "Sophisticated & Clean"
+      image:
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&h=400&fit=crop&auto=enhance",
+      mood: "Sophisticated & Clean",
     },
     {
       value: "Minimalist",
       title: "Minimalist Zen",
       description: "Less is more - focus on functionality and tranquility",
-      characteristics: ["Monochromatic palettes", "Natural materials", "Uncluttered spaces", "Simple forms"],
+      characteristics: [
+        "Monochromatic palettes",
+        "Natural materials",
+        "Uncluttered spaces",
+        "Simple forms",
+      ],
       colorPalette: ["#FFFFFF", "#F8F8F8", "#E0E0E0", "#CCCCCC"],
-      image: "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fb419a54b0da842d5b0350a48628594a0?format=webp&width=800",
-      mood: "Peaceful & Serene"
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fb419a54b0da842d5b0350a48628594a0?format=webp&width=800",
+      mood: "Peaceful & Serene",
     },
     {
       value: "Traditional",
       title: "Classic Traditional",
       description: "Timeless elegance with rich textures and warm colors",
-      characteristics: ["Warm wood tones", "Rich fabrics", "Ornate details", "Classic furniture"],
+      characteristics: [
+        "Warm wood tones",
+        "Rich fabrics",
+        "Ornate details",
+        "Classic furniture",
+      ],
       colorPalette: ["#8B4513", "#DAA520", "#F5DEB3", "#CD853F"],
-      image: "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Faf54d6c82c2c428fa406fa6aa6d65a07?format=webp&width=800",
-      mood: "Warm & Inviting"
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Faf54d6c82c2c428fa406fa6aa6d65a07?format=webp&width=800",
+      mood: "Warm & Inviting",
     },
     {
       value: "Industrial",
       title: "Urban Industrial",
-      description: "Raw materials and exposed elements with urban sophistication",
-      characteristics: ["Exposed brick", "Metal accents", "Concrete surfaces", "Dark color schemes"],
+      description:
+        "Raw materials and exposed elements with urban sophistication",
+      characteristics: [
+        "Exposed brick",
+        "Metal accents",
+        "Concrete surfaces",
+        "Dark color schemes",
+      ],
       colorPalette: ["#2F2F2F", "#696969", "#B8860B", "#A0522D"],
-      image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=500&h=400&fit=crop&auto=enhance&contrast=20",
-      mood: "Bold & Edgy"
-    }
+      image:
+        "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=500&h=400&fit=crop&auto=enhance&contrast=20",
+      mood: "Bold & Edgy",
+    },
   ];
 
   return (
@@ -63,7 +92,8 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
             Choose Your Design Style
           </h1>
           <p className="text-xl text-brand-muted max-w-3xl mx-auto">
-            Select a design aesthetic that reflects your personality and lifestyle preferences
+            Select a design aesthetic that reflects your personality and
+            lifestyle preferences
           </p>
         </div>
 
@@ -89,10 +119,12 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
+
                   {/* Style Badge */}
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs font-medium text-brand-text">{style.mood}</span>
+                    <span className="text-xs font-medium text-brand-text">
+                      {style.mood}
+                    </span>
                   </div>
 
                   {/* Selection Indicator */}
@@ -104,17 +136,23 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
 
                   {/* Title Overlay */}
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl font-bold text-white mb-1">{style.title}</h3>
+                    <h3 className="text-xl font-bold text-white mb-1">
+                      {style.title}
+                    </h3>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <p className="text-brand-muted text-sm mb-4">{style.description}</p>
-                  
+                  <p className="text-brand-muted text-sm mb-4">
+                    {style.description}
+                  </p>
+
                   {/* Color Palette */}
                   <div className="flex items-center space-x-2 mb-4">
-                    <span className="text-xs font-medium text-brand-text">Colors:</span>
+                    <span className="text-xs font-medium text-brand-text">
+                      Colors:
+                    </span>
                     <div className="flex space-x-1">
                       {style.colorPalette.map((color, index) => (
                         <div
@@ -155,37 +193,52 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-3xl font-bold text-brand-text mb-4">
-                  {styleOptions.find(s => s.value === selected)?.title}
+                  {styleOptions.find((s) => s.value === selected)?.title}
                 </h3>
                 <p className="text-brand-muted mb-6">
-                  {styleOptions.find(s => s.value === selected)?.description}
+                  {styleOptions.find((s) => s.value === selected)?.description}
                 </p>
-                
+
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold text-brand-text mb-2">Key Characteristics:</h4>
+                    <h4 className="font-semibold text-brand-text mb-2">
+                      Key Characteristics:
+                    </h4>
                     <div className="grid grid-cols-2 gap-2">
-                      {styleOptions.find(s => s.value === selected)?.characteristics.map((char, index) => (
-                        <div key={index} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-indigo-600 rounded-full"></div>
-                          <span className="text-sm text-brand-text">{char}</span>
-                        </div>
-                      ))}
+                      {styleOptions
+                        .find((s) => s.value === selected)
+                        ?.characteristics.map((char, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center space-x-2"
+                          >
+                            <div className="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                            <span className="text-sm text-brand-text">
+                              {char}
+                            </span>
+                          </div>
+                        ))}
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-brand-text mb-2">Color Palette:</h4>
+                    <h4 className="font-semibold text-brand-text mb-2">
+                      Color Palette:
+                    </h4>
                     <div className="flex space-x-3">
-                      {styleOptions.find(s => s.value === selected)?.colorPalette.map((color, index) => (
-                        <div key={index} className="text-center">
-                          <div
-                            className="w-8 h-8 rounded-lg border border-gray-200 mb-1"
-                            style={{ backgroundColor: color }}
-                          />
-                          <span className="text-xs text-brand-muted">{color}</span>
-                        </div>
-                      ))}
+                      {styleOptions
+                        .find((s) => s.value === selected)
+                        ?.colorPalette.map((color, index) => (
+                          <div key={index} className="text-center">
+                            <div
+                              className="w-8 h-8 rounded-lg border border-gray-200 mb-1"
+                              style={{ backgroundColor: color }}
+                            />
+                            <span className="text-xs text-brand-muted">
+                              {color}
+                            </span>
+                          </div>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -198,7 +251,9 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
                   </div>
                   <div>
                     <h4 className="font-bold text-green-900">Style Locked</h4>
-                    <p className="text-green-700 text-sm">All room previews will match {selected} aesthetic</p>
+                    <p className="text-green-700 text-sm">
+                      All room previews will match {selected} aesthetic
+                    </p>
                   </div>
                 </div>
                 <p className="text-xs text-brand-muted mt-4">

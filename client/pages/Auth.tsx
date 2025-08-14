@@ -2,8 +2,19 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
 import { Smartphone, Mail, ArrowLeft, Shield, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -14,7 +25,7 @@ export default function Auth() {
 
   const handleSendOTP = () => {
     if (!identifier.trim()) return;
-    
+
     localStorage.setItem("authIdentifier", identifier);
     navigate("/otp");
   };
@@ -25,7 +36,10 @@ export default function Auth() {
       <div className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors group">
+            <Link
+              to="/"
+              className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors group"
+            >
               <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
               <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
@@ -46,25 +60,33 @@ export default function Auth() {
               <div className="w-24 h-24 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <span className="text-4xl text-white">🏠</span>
               </div>
-              <CardTitle className="text-3xl text-brand-text mb-3 font-bold">Welcome Back</CardTitle>
+              <CardTitle className="text-3xl text-brand-text mb-3 font-bold">
+                Welcome Back
+              </CardTitle>
               <CardDescription className="text-lg text-brand-muted leading-relaxed">
                 Sign up or sign in to start designing your dream home
               </CardDescription>
             </CardHeader>
-            
+
             <CardContent className="px-8 pb-12 space-y-8">
               <Tabs value={activeTab} onValueChange={setActiveTab}>
                 <TabsList className="grid w-full grid-cols-2 mb-8 h-14 bg-gray-100 p-1 rounded-xl">
-                  <TabsTrigger value="phone" className="flex items-center space-x-2 h-12 rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm">
+                  <TabsTrigger
+                    value="phone"
+                    className="flex items-center space-x-2 h-12 rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm"
+                  >
                     <Smartphone className="h-4 w-4" />
                     <span className="font-medium">Phone</span>
                   </TabsTrigger>
-                  <TabsTrigger value="email" className="flex items-center space-x-2 h-12 rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm">
+                  <TabsTrigger
+                    value="email"
+                    className="flex items-center space-x-2 h-12 rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-sm"
+                  >
                     <Mail className="h-4 w-4" />
                     <span className="font-medium">Email</span>
                   </TabsTrigger>
                 </TabsList>
-                
+
                 <TabsContent value="phone" className="space-y-6">
                   <div>
                     <label className="text-sm font-semibold text-brand-text block mb-3">
@@ -78,11 +100,12 @@ export default function Auth() {
                       className="h-14 text-lg px-4 border-2 border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl transition-all"
                     />
                     <p className="text-xs text-brand-muted mt-2">
-                      📱 <strong>Demo:</strong> You can test with any dummy number
+                      📱 <strong>Demo:</strong> You can test with any dummy
+                      number
                     </p>
                   </div>
                 </TabsContent>
-                
+
                 <TabsContent value="email" className="space-y-6">
                   <div>
                     <label className="text-sm font-semibold text-brand-text block mb-3">
@@ -96,11 +119,12 @@ export default function Auth() {
                       className="h-14 text-lg px-4 border-2 border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl transition-all"
                     />
                     <p className="text-xs text-brand-muted mt-2">
-                      📧 <strong>Demo:</strong> You can test with any dummy email
+                      📧 <strong>Demo:</strong> You can test with any dummy
+                      email
                     </p>
                   </div>
                 </TabsContent>
-                
+
                 <Button
                   onClick={handleSendOTP}
                   disabled={!identifier.trim()}
@@ -114,9 +138,13 @@ export default function Auth() {
               <div className="text-center pt-6 border-t border-gray-100">
                 <p className="text-sm text-brand-muted leading-relaxed">
                   By continuing, you agree to our{" "}
-                  <span className="text-brand-primary hover:underline cursor-pointer font-medium">Terms of Service</span>
-                  {" "}and{" "}
-                  <span className="text-brand-primary hover:underline cursor-pointer font-medium">Privacy Policy</span>
+                  <span className="text-brand-primary hover:underline cursor-pointer font-medium">
+                    Terms of Service
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-brand-primary hover:underline cursor-pointer font-medium">
+                    Privacy Policy
+                  </span>
                 </p>
               </div>
             </CardContent>
@@ -124,7 +152,9 @@ export default function Auth() {
 
           {/* Trust Indicators */}
           <div className="mt-8 text-center">
-            <p className="text-sm text-brand-muted mb-6">Trusted by 500+ homeowners</p>
+            <p className="text-sm text-brand-muted mb-6">
+              Trusted by 500+ homeowners
+            </p>
             <div className="flex justify-center space-x-8 text-sm">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -143,13 +173,15 @@ export default function Auth() {
 
           {/* Benefits Preview */}
           <div className="mt-12 bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100">
-            <h3 className="text-lg font-bold text-brand-text mb-4 text-center">What you'll get access to:</h3>
+            <h3 className="text-lg font-bold text-brand-text mb-4 text-center">
+              What you'll get access to:
+            </h3>
             <div className="space-y-3">
               {[
                 "Personalized interior design recommendations",
                 "Real-time 3D room previews",
                 "Expert designer consultations",
-                "Transparent pricing with instant quotes"
+                "Transparent pricing with instant quotes",
               ].map((benefit, index) => (
                 <div key={index} className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />

@@ -6,9 +6,19 @@ import { HouseStyleSelection } from "../components/HouseStyleSelection";
 import { MaterialPicker } from "../components/MaterialPicker";
 import { RoomPreview } from "../components/RoomPreview";
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
 import { Upload, FileText, CheckCircle, ArrowLeft } from "lucide-react";
-import { getRoomImage, getAvailableMaterials, isMaterialAvailable } from "../utils/imageMap";
+import {
+  getRoomImage,
+  getAvailableMaterials,
+  isMaterialAvailable,
+} from "../utils/imageMap";
 import { Link } from "react-router-dom";
 
 interface WizardState {
@@ -17,7 +27,13 @@ interface WizardState {
   houseStyle: string;
   living: { tile: string; paint: string; furniture: string; carpet: string };
   kitchen: { slab: string; wallTile: string; doorKnob: string; sink: string };
-  bedroom: { flooring: string; bedroomPaint: string; wardrobe: string; lighting: string; bed: string };
+  bedroom: {
+    flooring: string;
+    bedroomPaint: string;
+    wardrobe: string;
+    lighting: string;
+    bed: string;
+  };
   floorPlanUrl: string;
   quote: { living: number; kitchen: number; bedroom: number; total: number };
 }
@@ -25,26 +41,43 @@ interface WizardState {
 export default function Wizard() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  
+
   const [state, setState] = useState<WizardState>({
     step: parseInt(searchParams.get("step") || "1"),
     bhkType: "",
     houseStyle: "",
     living: { tile: "", paint: "", furniture: "", carpet: "" },
     kitchen: { slab: "", wallTile: "", doorKnob: "", sink: "" },
-    bedroom: { flooring: "", bedroomPaint: "", wardrobe: "", lighting: "", bed: "" },
+    bedroom: {
+      flooring: "",
+      bedroomPaint: "",
+      wardrobe: "",
+      lighting: "",
+      bed: "",
+    },
     floorPlanUrl: "",
-    quote: { living: 0, kitchen: 0, bedroom: 0, total: 0 }
+    quote: { living: 0, kitchen: 0, bedroom: 0, total: 0 },
   });
 
-  const steps = ["BHK Type", "Design Style", "Living Room", "Kitchen", "Bedroom", "Upload & Quote"];
+  const steps = [
+    "BHK Type",
+    "Design Style",
+    "Living Room",
+    "Kitchen",
+    "Bedroom",
+    "Upload & Quote",
+  ];
 
   // Enhanced material fields with availability filtering
-  const getFilteredMaterials = (fieldName: string, roomName: string, allOptions: string[]) => {
+  const getFilteredMaterials = (
+    fieldName: string,
+    roomName: string,
+    allOptions: string[],
+  ) => {
     if (!state.bhkType || !state.houseStyle) return allOptions;
-    
-    return allOptions.filter(option => 
-      isMaterialAvailable(state.bhkType, state.houseStyle, roomName, option)
+
+    return allOptions.filter((option) =>
+      isMaterialAvailable(state.bhkType, state.houseStyle, roomName, option),
     );
   };
 
@@ -53,26 +86,26 @@ export default function Wizard() {
       name: "tile",
       label: "Floor Tile Style",
       options: ["Matte Porcelain", "Glossy Ceramic", "Textured Stone"],
-      type: "material" as const
+      type: "material" as const,
     },
     {
       name: "paint",
       label: "Wall Paint Color",
       options: ["Warm White", "Greige", "Soft Beige", "Cool Grey"],
-      type: "color" as const
+      type: "color" as const,
     },
     {
       name: "furniture",
       label: "Seating Furniture",
       options: ["KIVIK Sofa", "EKTORP Sofa", "GLOSTAD Sofa"],
-      type: "style" as const
+      type: "style" as const,
     },
     {
       name: "carpet",
       label: "Area Carpet",
       options: ["Persian Rug", "Modern Geometric", "Solid Color"],
-      type: "style" as const
-    }
+      type: "style" as const,
+    },
   ];
 
   const kitchenFields = [
@@ -80,26 +113,26 @@ export default function Wizard() {
       name: "slab",
       label: "Countertop Slab",
       options: ["Granite Black", "Quartz White", "Marble Carrara"],
-      type: "material" as const
+      type: "material" as const,
     },
     {
       name: "wallTile",
       label: "Wall Tile",
       options: ["Subway Gloss", "Hex Matte", "Patterned Porcelain"],
-      type: "material" as const
+      type: "material" as const,
     },
     {
       name: "doorKnob",
       label: "Cabinet Hardware",
       options: ["Modern Handle", "Classic Knob", "Brushed Steel"],
-      type: "style" as const
+      type: "style" as const,
     },
     {
       name: "sink",
       label: "Sink Style",
       options: ["Single Bowl", "Double Bowl", "Farmhouse"],
-      type: "style" as const
-    }
+      type: "style" as const,
+    },
   ];
 
   const bedroomFields = [
@@ -107,64 +140,68 @@ export default function Wizard() {
       name: "flooring",
       label: "Floor Material",
       options: ["Wood Laminate", "Vitrified Tile", "Engineered Wood"],
-      type: "material" as const
+      type: "material" as const,
     },
     {
       name: "bedroomPaint",
       label: "Wall Paint",
       options: ["Calming Blue", "Warm Taupe", "Ivory"],
-      type: "color" as const
+      type: "color" as const,
     },
     {
       name: "wardrobe",
       label: "Wardrobe Finish",
       options: ["Matte Laminate", "High-Gloss Laminate", "Veneer"],
-      type: "material" as const
+      type: "material" as const,
     },
     {
       name: "lighting",
       label: "Lighting Style",
       options: ["Warm Recessed", "Pendant", "Cove"],
-      type: "style" as const
+      type: "style" as const,
     },
     {
       name: "bed",
       label: "Bed Type",
       options: ["Platform Bed", "Storage Bed", "Four Poster"],
-      type: "style" as const
-    }
+      type: "style" as const,
+    },
   ];
 
   const handleBHKSelect = (bhkType: string) => {
-    setState(prev => ({ ...prev, bhkType }));
+    setState((prev) => ({ ...prev, bhkType }));
   };
 
   const handleStyleSelect = (houseStyle: string) => {
-    setState(prev => ({ ...prev, houseStyle }));
+    setState((prev) => ({ ...prev, houseStyle }));
   };
 
-  const handleMaterialSelect = (room: "living" | "kitchen" | "bedroom", field: string, value: string) => {
-    setState(prev => ({
+  const handleMaterialSelect = (
+    room: "living" | "kitchen" | "bedroom",
+    field: string,
+    value: string,
+  ) => {
+    setState((prev) => ({
       ...prev,
-      [room]: { ...prev[room], [field]: value }
+      [room]: { ...prev[room], [field]: value },
     }));
   };
 
   const handleNext = (nextStep: number) => {
     navigate(`/wizard?step=${nextStep}`);
-    setState(prev => ({ ...prev, step: nextStep }));
+    setState((prev) => ({ ...prev, step: nextStep }));
   };
 
   const handleBack = (prevStep: number) => {
     navigate(`/wizard?step=${prevStep}`);
-    setState(prev => ({ ...prev, step: prevStep }));
+    setState((prev) => ({ ...prev, step: prevStep }));
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const fakeUrl = URL.createObjectURL(file);
-      setState(prev => ({ ...prev, floorPlanUrl: fakeUrl }));
+      setState((prev) => ({ ...prev, floorPlanUrl: fakeUrl }));
     }
   };
 
@@ -173,28 +210,54 @@ export default function Wizard() {
       living: 150000,
       kitchen: 220000,
       bedroom: 130000,
-      total: 500000
+      total: 500000,
     };
-    setState(prev => ({ ...prev, quote }));
-    localStorage.setItem("userSelections", JSON.stringify({
-      bhkType: state.bhkType,
-      houseStyle: state.houseStyle,
-      living: state.living,
-      kitchen: state.kitchen,
-      bedroom: state.bedroom
-    }));
+    setState((prev) => ({ ...prev, quote }));
+    localStorage.setItem(
+      "userSelections",
+      JSON.stringify({
+        bhkType: state.bhkType,
+        houseStyle: state.houseStyle,
+        living: state.living,
+        kitchen: state.kitchen,
+        bedroom: state.bedroom,
+      }),
+    );
     navigate("/payment");
   };
 
   const isStepComplete = () => {
     switch (state.step) {
-      case 1: return !!state.bhkType;
-      case 2: return !!state.houseStyle;
-      case 3: return state.living.tile && state.living.paint && state.living.furniture && state.living.carpet;
-      case 4: return state.kitchen.slab && state.kitchen.wallTile && state.kitchen.doorKnob && state.kitchen.sink;
-      case 5: return state.bedroom.flooring && state.bedroom.bedroomPaint && state.bedroom.wardrobe && state.bedroom.lighting && state.bedroom.bed;
-      case 6: return !!state.floorPlanUrl;
-      default: return false;
+      case 1:
+        return !!state.bhkType;
+      case 2:
+        return !!state.houseStyle;
+      case 3:
+        return (
+          state.living.tile &&
+          state.living.paint &&
+          state.living.furniture &&
+          state.living.carpet
+        );
+      case 4:
+        return (
+          state.kitchen.slab &&
+          state.kitchen.wallTile &&
+          state.kitchen.doorKnob &&
+          state.kitchen.sink
+        );
+      case 5:
+        return (
+          state.bedroom.flooring &&
+          state.bedroom.bedroomPaint &&
+          state.bedroom.wardrobe &&
+          state.bedroom.lighting &&
+          state.bedroom.bed
+        );
+      case 6:
+        return !!state.floorPlanUrl;
+      default:
+        return false;
     }
   };
 
@@ -204,7 +267,10 @@ export default function Wizard() {
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors">
+            <Link
+              to="/"
+              className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors"
+            >
               <ArrowLeft className="h-5 w-5" />
               <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
@@ -219,7 +285,9 @@ export default function Wizard() {
                   {state.houseStyle}
                 </span>
               )}
-              <div className="text-sm text-brand-muted">Step {state.step} of {steps.length}</div>
+              <div className="text-sm text-brand-muted">
+                Step {state.step} of {steps.length}
+              </div>
             </div>
           </div>
         </div>
@@ -232,7 +300,11 @@ export default function Wizard() {
         <div className="max-w-7xl mx-auto px-6 pb-8">
           <div className="flex justify-center space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl max-w-3xl mx-auto">
             {state.step === 2 && (
-              <Button variant="outline" onClick={() => handleBack(1)} className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50">
+              <Button
+                variant="outline"
+                onClick={() => handleBack(1)}
+                className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50"
+              >
                 Back to BHK Type
               </Button>
             )}
@@ -241,7 +313,9 @@ export default function Wizard() {
               disabled={!isStepComplete()}
               className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 text-white px-12 py-4 text-lg rounded-xl disabled:opacity-50 shadow-lg transition-all"
             >
-              {state.step === 1 ? "Choose Design Style" : "Start Room Customization"}
+              {state.step === 1
+                ? "Choose Design Style"
+                : "Start Room Customization"}
             </Button>
           </div>
         </div>
@@ -250,10 +324,7 @@ export default function Wizard() {
       <div className="max-w-7xl mx-auto px-6 pb-12">
         {/* Step 1: BHK Type Selection */}
         {state.step === 1 && (
-          <BHKSelection
-            selected={state.bhkType}
-            onSelect={handleBHKSelect}
-          />
+          <BHKSelection selected={state.bhkType} onSelect={handleBHKSelect} />
         )}
 
         {/* Step 2: House Style Selection */}
@@ -270,7 +341,11 @@ export default function Wizard() {
           <div>
             {/* Navigation at top */}
             <div className="flex justify-between mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl">
-              <Button variant="outline" onClick={() => handleBack(2)} className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50">
+              <Button
+                variant="outline"
+                onClick={() => handleBack(2)}
+                className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50"
+              >
                 Back to Design Style
               </Button>
               <Button
@@ -287,7 +362,9 @@ export default function Wizard() {
                 title="Living Room Materials"
                 fields={livingFields}
                 selections={state.living}
-                onSelectionChange={(field, value) => handleMaterialSelect("living", field, value)}
+                onSelectionChange={(field, value) =>
+                  handleMaterialSelect("living", field, value)
+                }
                 bhkType={state.bhkType}
                 houseStyle={state.houseStyle}
                 roomName="living"
@@ -309,7 +386,11 @@ export default function Wizard() {
           <div>
             {/* Navigation at top */}
             <div className="flex justify-between mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl">
-              <Button variant="outline" onClick={() => handleBack(3)} className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50">
+              <Button
+                variant="outline"
+                onClick={() => handleBack(3)}
+                className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50"
+              >
                 Back to Living Room
               </Button>
               <Button
@@ -326,7 +407,9 @@ export default function Wizard() {
                 title="Kitchen Materials"
                 fields={kitchenFields}
                 selections={state.kitchen}
-                onSelectionChange={(field, value) => handleMaterialSelect("kitchen", field, value)}
+                onSelectionChange={(field, value) =>
+                  handleMaterialSelect("kitchen", field, value)
+                }
                 bhkType={state.bhkType}
                 houseStyle={state.houseStyle}
                 roomName="kitchen"
@@ -348,7 +431,11 @@ export default function Wizard() {
           <div>
             {/* Navigation at top */}
             <div className="flex justify-between mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl">
-              <Button variant="outline" onClick={() => handleBack(4)} className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50">
+              <Button
+                variant="outline"
+                onClick={() => handleBack(4)}
+                className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50"
+              >
                 Back to Kitchen
               </Button>
               <Button
@@ -365,7 +452,9 @@ export default function Wizard() {
                 title="Bedroom Materials"
                 fields={bedroomFields}
                 selections={state.bedroom}
-                onSelectionChange={(field, value) => handleMaterialSelect("bedroom", field, value)}
+                onSelectionChange={(field, value) =>
+                  handleMaterialSelect("bedroom", field, value)
+                }
                 bhkType={state.bhkType}
                 houseStyle={state.houseStyle}
                 roomName="bedroom"
@@ -387,24 +476,33 @@ export default function Wizard() {
           <div className="max-w-3xl mx-auto">
             <Card className="p-8 shadow-2xl border-0">
               <CardHeader className="text-center">
-                <CardTitle className="text-3xl text-brand-text">Upload Floor Plan & Get Quote</CardTitle>
+                <CardTitle className="text-3xl text-brand-text">
+                  Upload Floor Plan & Get Quote
+                </CardTitle>
                 <CardDescription className="text-lg text-brand-muted">
-                  Share your floor plan to receive an accurate quote for your {state.bhkType} {state.houseStyle} design
+                  Share your floor plan to receive an accurate quote for your{" "}
+                  {state.bhkType} {state.houseStyle} design
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-8">
                 {/* Selection Summary */}
                 <div className="bg-gradient-to-r from-brand-primary/10 to-blue-100 p-6 rounded-2xl">
-                  <h3 className="text-xl font-bold text-brand-text mb-4 text-center">Your Design Summary</h3>
+                  <h3 className="text-xl font-bold text-brand-text mb-4 text-center">
+                    Your Design Summary
+                  </h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="text-center">
                       <span className="text-2xl">🏠</span>
-                      <p className="font-semibold text-brand-text">{state.bhkType}</p>
+                      <p className="font-semibold text-brand-text">
+                        {state.bhkType}
+                      </p>
                       <p className="text-sm text-brand-muted">Apartment Type</p>
                     </div>
                     <div className="text-center">
                       <span className="text-2xl">🎨</span>
-                      <p className="font-semibold text-brand-text">{state.houseStyle}</p>
+                      <p className="font-semibold text-brand-text">
+                        {state.houseStyle}
+                      </p>
                       <p className="text-sm text-brand-muted">Design Style</p>
                     </div>
                   </div>
@@ -413,8 +511,12 @@ export default function Wizard() {
                 <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-brand-primary transition-colors">
                   <Upload className="h-12 w-12 text-brand-muted mx-auto mb-4" />
                   <label className="cursor-pointer">
-                    <span className="text-lg font-medium text-brand-text">Click to upload floor plan</span>
-                    <p className="text-brand-muted mt-2">PDF, JPG, PNG up to 10MB</p>
+                    <span className="text-lg font-medium text-brand-text">
+                      Click to upload floor plan
+                    </span>
+                    <p className="text-brand-muted mt-2">
+                      PDF, JPG, PNG up to 10MB
+                    </p>
                     <input
                       type="file"
                       accept=".pdf,.jpg,.jpeg,.png"
@@ -422,22 +524,28 @@ export default function Wizard() {
                       className="hidden"
                     />
                   </label>
-                  
+
                   {state.floorPlanUrl && (
                     <div className="mt-6 flex items-center justify-center space-x-2 text-green-600">
                       <CheckCircle className="h-5 w-5" />
-                      <span className="font-medium">Floor plan uploaded successfully!</span>
+                      <span className="font-medium">
+                        Floor plan uploaded successfully!
+                      </span>
                     </div>
                   )}
                 </div>
-                
+
                 <div className="bg-blue-50 p-6 rounded-xl">
                   <div className="flex items-start space-x-3">
                     <FileText className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-semibold text-blue-900 mb-2">Your project includes:</h4>
+                      <h4 className="font-semibold text-blue-900 mb-2">
+                        Your project includes:
+                      </h4>
                       <ul className="text-sm text-blue-800 space-y-1">
-                        <li>• Complete {state.houseStyle} {state.bhkType} design</li>
+                        <li>
+                          • Complete {state.houseStyle} {state.bhkType} design
+                        </li>
                         <li>• Professional installation team</li>
                         <li>• Project management and consultation</li>
                         <li>• 3D visualization and design mockups</li>
@@ -445,7 +553,7 @@ export default function Wizard() {
                     </div>
                   </div>
                 </div>
-                
+
                 <Button
                   onClick={generateQuote}
                   disabled={!state.floorPlanUrl}
@@ -453,9 +561,13 @@ export default function Wizard() {
                 >
                   Continue to Summary
                 </Button>
-                
+
                 <div className="flex justify-center">
-                  <Button variant="outline" onClick={() => handleBack(5)} className="px-8 py-3">
+                  <Button
+                    variant="outline"
+                    onClick={() => handleBack(5)}
+                    className="px-8 py-3"
+                  >
                     Back to Bedroom
                   </Button>
                 </div>
@@ -463,7 +575,6 @@ export default function Wizard() {
             </Card>
           </div>
         )}
-
       </div>
     </div>
   );
