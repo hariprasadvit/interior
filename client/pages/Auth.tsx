@@ -96,7 +96,7 @@ export default function Auth() {
                       className="h-14 text-lg px-4 border-2 border-gray-200 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 rounded-xl transition-all"
                     />
                     <p className="text-xs text-brand-muted mt-2">
-                      We'll send a verification code to this email
+                      📧 <strong>Demo:</strong> You can test with any dummy email
                     </p>
                   </div>
                 </TabsContent>
