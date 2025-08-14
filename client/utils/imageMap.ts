@@ -282,13 +282,16 @@ const defaultImages = {
  * Includes proper error handling and fallbacks
  */
 export function getRoomImage(
-  bhkType: string, 
-  houseStyle: string, 
-  roomName: string, 
+  bhkType: string,
+  houseStyle: string,
+  roomName: string,
   selectedMaterial?: string
 ): string {
+  console.log('getRoomImage called with:', { bhkType, houseStyle, roomName, selectedMaterial });
+
   // Validate inputs
   if (!bhkType || !houseStyle || !roomName) {
+    console.log('Missing required inputs, using default');
     return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
   }
 
@@ -296,31 +299,43 @@ export function getRoomImage(
     // Navigate through the imageMap structure
     const bhkData = imageMap[bhkType as keyof typeof imageMap];
     if (!bhkData) {
+      console.log('BHK data not found');
       return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
     }
 
     const styleData = bhkData[houseStyle as keyof typeof bhkData];
     if (!styleData) {
+      console.log('Style data not found');
       return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
     }
 
     const roomData = styleData[roomName as keyof typeof styleData];
     if (!roomData) {
+      console.log('Room data not found');
       return defaultImages[roomName as keyof typeof defaultImages] || defaultImages.living;
     }
 
+    console.log('Available keys in room data:', Object.keys(roomData));
+
     // If a specific material is selected, try to get its image
     if (selectedMaterial && selectedMaterial !== "_room_preview" && roomData[selectedMaterial as keyof typeof roomData]) {
+      console.log(`Found material ${selectedMaterial}, returning:`, roomData[selectedMaterial as keyof typeof roomData]);
       return roomData[selectedMaterial as keyof typeof roomData];
+    }
+
+    if (selectedMaterial) {
+      console.log(`Material ${selectedMaterial} not found in room data`);
     }
 
     // Check for room preview image first when no material is selected
     if (roomData["_room_preview" as keyof typeof roomData]) {
+      console.log('Using room preview image');
       return roomData["_room_preview" as keyof typeof roomData];
     }
 
     // Otherwise, return the first available image for this room in this BHK + style
     const firstImageKey = Object.keys(roomData).filter(key => key !== "_room_preview")[0];
+    console.log('Using first available image:', firstImageKey);
     return roomData[firstImageKey as keyof typeof roomData] || defaultImages[roomName as keyof typeof defaultImages];
   } catch (error) {
     console.warn(`Failed to get room image for ${bhkType} ${houseStyle} ${roomName}:`, error);
