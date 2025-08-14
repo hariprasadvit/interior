@@ -61,7 +61,7 @@ export default function OTP() {
       setIsVerifying(false);
       toast({
         title: "Verification Successful",
-        description: "Welcome to Boolean & Beyond!",
+        description: "Welcome to InteriorFlow!",
       });
       navigate("/wizard?step=1");
     }, 1500);
@@ -95,7 +95,7 @@ export default function OTP() {
           <div className="flex items-center justify-between">
             <Link to="/auth" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors group">
               <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
-              <span className="text-2xl font-bold">Boolean & Beyond</span>
+              <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
             <div className="hidden md:flex items-center space-x-2 text-sm text-brand-muted">
               <Shield className="h-4 w-4" />
@@ -192,7 +192,7 @@ export default function OTP() {
                   <div className="text-sm">
                     <p className="font-semibold text-blue-900 mb-2">Security Notice</p>
                     <p className="text-blue-800 leading-relaxed">
-                      Never share this code with anyone. Boolean & Beyond will never ask for your OTP over phone or email.
+                      Never share this code with anyone. InteriorFlow will never ask for your OTP over phone or email.
                     </p>
                   </div>
                 </div>
