@@ -88,6 +88,8 @@ export const imageMap = {
         "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60&q=80"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
         "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
         "Marble Carrara": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60"
@@ -109,6 +111,8 @@ export const imageMap = {
         "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=30"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
         "Quartz White": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
         "Farmhouse": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40"
@@ -126,6 +130,8 @@ export const imageMap = {
         "GLOSTAD Sofa": "https://images.unsplash.com/photo-1586905251897-b5de8d427b24?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30&q=80"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
         "Hex Matte": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
         "Brushed Steel": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30"
@@ -181,6 +187,8 @@ export const imageMap = {
         "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70&q=80"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Quartz White": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
         "Marble Carrara": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70"
       },
@@ -196,6 +204,8 @@ export const imageMap = {
         "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
         "Farmhouse": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50"
       },
@@ -210,6 +220,8 @@ export const imageMap = {
         "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40"
       },
       "bedroom": {
@@ -228,6 +240,8 @@ export const imageMap = {
         "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Modern Handle": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
@@ -245,6 +259,8 @@ export const imageMap = {
         "KIVIK Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80&q=80"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80"
       },
       "bedroom": {
@@ -257,6 +273,8 @@ export const imageMap = {
         "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60"
       },
       "bedroom": {
@@ -268,6 +286,8 @@ export const imageMap = {
         "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50"
       },
       "bedroom": {
