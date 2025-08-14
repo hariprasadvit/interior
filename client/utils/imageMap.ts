@@ -5,7 +5,7 @@ export const imageMap = {
     "Modern": {
       "living": {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F2ac1102c4fa24711a900a4819cabe664?format=webp&width=800",
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
         // Floor Tiles - Actual tile closeup images
         "Matte Porcelain": "https://images.unsplash.com/photo-1615874959474-d609969a20ac?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Glossy Ceramic": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
@@ -68,7 +68,7 @@ export const imageMap = {
     "Minimalist": {
       "living": {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F2ac1102c4fa24711a900a4819cabe664?format=webp&width=800",
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
         // Floor tiles with minimalist filter
         "Matte Porcelain": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
         "Glossy Ceramic": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
@@ -136,7 +136,7 @@ export const imageMap = {
     "Modern": {
       "living": {
         // Room Preview Default
-        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F2ac1102c4fa24711a900a4819cabe664?format=webp&width=800",
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
         // Use different tile images for 2BHK
         "Matte Porcelain": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Glossy Ceramic": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
