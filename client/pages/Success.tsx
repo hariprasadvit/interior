@@ -48,7 +48,7 @@ export default function Success() {
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="text-2xl font-bold text-brand-text">Boolean & Beyond</div>
+          <div className="text-2xl font-bold text-brand-text">InteriorFlow</div>
         </div>
       </div>
 
@@ -335,7 +335,7 @@ export default function Success() {
         {/* Thank You Message */}
         <div className="text-center mt-16 p-8 bg-gradient-to-r from-brand-primary/10 via-purple-100 to-blue-100 rounded-3xl border border-gray-100">
           <h3 className="text-3xl font-bold text-brand-text mb-6">
-            Thank You for Choosing Boolean & Beyond
+            Thank You for Choosing InteriorFlow
           </h3>
           <p className="text-brand-muted max-w-3xl mx-auto leading-relaxed text-lg">
             We're excited to transform your <strong>{userSelections?.bhkType} {userSelections?.houseStyle}</strong> space into something extraordinary. 
