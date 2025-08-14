@@ -57,7 +57,7 @@ export default function Index() {
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Button variant="outline" className="px-10 py-4 text-lg rounded-full border-2 border-gray-300 hover:border-brand-primary hover:bg-brand-primary/5 transition-all">
+                <Button variant="outline" className="px-10 py-4 text-lg rounded-full border-2 border-gray-300 hover:border-purple-500 hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 transition-all">
                   View Portfolio
                 </Button>
               </div>
