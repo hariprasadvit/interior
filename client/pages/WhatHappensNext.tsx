@@ -46,7 +46,7 @@ export default function WhatHappensNext() {
       title: "Production",
       description: "Raw materials have been procured, and production is underway at our factory.",
       icon: Factory,
-      color: "bg-red-500",
+      color: "bg-orange-500",
       deliverable: null,
       timeline: "15-20 business days"
     },
