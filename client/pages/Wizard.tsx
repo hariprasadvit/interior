@@ -286,36 +286,39 @@ export default function Wizard() {
 
         {/* Step 4: Kitchen */}
         {state.step === 4 && (
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <MaterialPicker
-              title="Kitchen Materials"
-              fields={kitchenFields}
-              selections={state.kitchen}
-              onSelectionChange={(field, value) => handleMaterialSelect("kitchen", field, value)}
-              bhkType={state.bhkType}
-              houseStyle={state.houseStyle}
-              roomName="kitchen"
-            />
-            
-            <RoomPreview
-              room="kitchen"
-              selections={state.kitchen}
-              title="Kitchen"
-              bhkType={state.bhkType}
-              houseStyle={state.houseStyle}
-            />
-
-            <div className="lg:col-span-2 flex justify-between pt-8">
-              <Button variant="outline" onClick={() => handleBack(3)} className="px-8 py-3">
+          <div>
+            {/* Navigation at top */}
+            <div className="flex justify-between mb-8 bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-xl">
+              <Button variant="outline" onClick={() => handleBack(3)} className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50">
                 Back to Living Room
               </Button>
               <Button
                 onClick={() => handleNext(5)}
                 disabled={!isStepComplete()}
-                className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-3 disabled:opacity-50 shadow-lg transition-all"
+                className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 text-white px-8 py-3 disabled:opacity-50 shadow-lg transition-all"
               >
                 Next: Bedroom Design
               </Button>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <MaterialPicker
+                title="Kitchen Materials"
+                fields={kitchenFields}
+                selections={state.kitchen}
+                onSelectionChange={(field, value) => handleMaterialSelect("kitchen", field, value)}
+                bhkType={state.bhkType}
+                houseStyle={state.houseStyle}
+                roomName="kitchen"
+              />
+
+              <RoomPreview
+                room="kitchen"
+                selections={state.kitchen}
+                title="Kitchen"
+                bhkType={state.bhkType}
+                houseStyle={state.houseStyle}
+              />
             </div>
           </div>
         )}
