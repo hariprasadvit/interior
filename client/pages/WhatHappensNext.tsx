@@ -220,12 +220,6 @@ export default function WhatHappensNext() {
                   <p className="text-sm text-red-50">Receive regular updates on your project progress via email</p>
                 </div>
               </div>
-              <Button 
-                className="bg-white text-brand-primary hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
-                onClick={() => window.location.href = "/"}
-              >
-                Return to Homepage
-              </Button>
             </div>
           </CardContent>
         </Card>
