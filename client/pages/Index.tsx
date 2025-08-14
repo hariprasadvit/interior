@@ -32,8 +32,8 @@ export default function Index() {
             <div className="space-y-10">
               <div className="space-y-8">
                 <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-primary/10 to-blue-100 px-4 py-2 rounded-full">
-                  <Star className="h-4 w-4 text-brand-primary" />
-                  <span className="text-brand-primary font-medium text-sm">Rated #1 Interior Design Platform</span>
+                  <Star className="h-4 w-4 text-indigo-600" />
+                  <span className="text-indigo-600 font-medium text-sm">Rated #1 Interior Design Platform</span>
                 </div>
                 
                 <h1 className="text-6xl md:text-7xl font-bold text-brand-text leading-tight">
@@ -41,7 +41,7 @@ export default function Index() {
                   <br />
                   <span className="relative">
                     your space
-                    <div className="absolute -bottom-3 left-0 w-full h-4 bg-gradient-to-r from-brand-primary/30 to-transparent -skew-x-12"></div>
+                    <div className="absolute -bottom-3 left-0 w-full h-4 bg-gradient-to-r from-indigo-600/30 to-transparent -skew-x-12"></div>
                   </span>
                 </h1>
                 <p className="text-xl text-brand-muted max-w-lg leading-relaxed">
@@ -108,7 +108,7 @@ export default function Index() {
 
               <div className="absolute bottom-8 left-8 bg-white rounded-2xl p-4 shadow-xl">
                 <div className="flex items-center space-x-3">
-                  <Award className="h-6 w-6 text-brand-primary" />
+                  <Award className="h-6 w-6 text-indigo-600" />
                   <div>
                     <div className="text-lg font-bold text-brand-text">Award</div>
                     <div className="text-sm text-brand-muted">Best Design 2024</div>
@@ -196,22 +196,22 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="space-y-4">
-              <div className="text-5xl font-bold text-brand-primary">300+</div>
+              <div className="text-5xl font-bold text-indigo-600">300+</div>
               <div className="text-lg font-semibold text-brand-text">Successful Projects</div>
               <div className="text-brand-muted">Completed across India</div>
             </div>
             <div className="space-y-4">
-              <div className="text-5xl font-bold text-brand-primary">500+</div>
+              <div className="text-5xl font-bold text-indigo-600">500+</div>
               <div className="text-lg font-semibold text-brand-text">Happy Families</div>
               <div className="text-brand-muted">Living their dream homes</div>
             </div>
             <div className="space-y-4">
-              <div className="text-5xl font-bold text-brand-primary">15+</div>
+              <div className="text-5xl font-bold text-indigo-600">15+</div>
               <div className="text-lg font-semibold text-brand-text">Years Experience</div>
               <div className="text-brand-muted">In interior design</div>
             </div>
             <div className="space-y-4">
-              <div className="text-5xl font-bold text-brand-primary">4.9★</div>
+              <div className="text-5xl font-bold text-indigo-600">4.9★</div>
               <div className="text-lg font-semibold text-brand-text">Customer Rating</div>
               <div className="text-brand-muted">Average review score</div>
             </div>
