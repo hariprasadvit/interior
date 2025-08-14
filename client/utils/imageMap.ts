@@ -154,6 +154,8 @@ export const imageMap = {
         "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
       },
       "kitchen": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F67c4cc0ad950470385f66cf3d9c75995?format=webp&width=800",
         "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Quartz White": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Marble Carrara": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
