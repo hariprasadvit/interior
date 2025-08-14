@@ -29,7 +29,7 @@ export default function WhatHappensNext() {
       id: 1,
       title: "Request Received",
       description:
-        "We've received your request and our senior designer will call you",
+        "You are here! We have received your request and our senior designer will call you",
       icon: Phone,
       color: "bg-green-500",
       deliverable: null,
