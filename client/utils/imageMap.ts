@@ -310,8 +310,13 @@ export function getRoomImage(
       return roomData[selectedMaterial as keyof typeof roomData];
     }
 
+    // Check for room preview image first when no material is selected
+    if (roomData["_room_preview" as keyof typeof roomData]) {
+      return roomData["_room_preview" as keyof typeof roomData];
+    }
+
     // Otherwise, return the first available image for this room in this BHK + style
-    const firstImageKey = Object.keys(roomData)[0];
+    const firstImageKey = Object.keys(roomData).filter(key => key !== "_room_preview")[0];
     return roomData[firstImageKey as keyof typeof roomData] || defaultImages[roomName as keyof typeof defaultImages];
   } catch (error) {
     console.warn(`Failed to get room image for ${bhkType} ${houseStyle} ${roomName}:`, error);
