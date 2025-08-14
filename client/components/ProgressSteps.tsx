@@ -27,7 +27,7 @@ export function ProgressSteps({ steps, current }: ProgressStepsProps) {
                   >
                     {isCompleted ? "✓" : stepNumber}
                   </div>
-                  <span className={`mt-2 text-sm ${isActive ? "text-brand-primary font-semibold" : "text-brand-muted"}`}>
+                  <span className={`mt-2 text-sm ${isActive ? "text-indigo-600 font-semibold" : "text-brand-muted"}`}>
                     {step}
                   </span>
                 </div>
