@@ -19,9 +19,9 @@ export function ProgressSteps({ steps, current }: ProgressStepsProps) {
                   <div
                     className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
                       isActive
-                        ? "bg-brand-primary text-white"
+                        ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white"
                         : isCompleted
-                        ? "bg-green-500 text-white"
+                        ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white"
                         : "bg-gray-200 text-brand-muted"
                     }`}
                   >
