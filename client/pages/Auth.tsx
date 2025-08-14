@@ -27,7 +27,7 @@ export default function Auth() {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors group">
               <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
-              <span className="text-2xl font-bold">Boolean & Beyond</span>
+              <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
             <div className="hidden md:flex items-center space-x-2 text-sm text-brand-muted">
               <Shield className="h-4 w-4" />
