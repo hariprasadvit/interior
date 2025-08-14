@@ -15,7 +15,7 @@ export default function Index() {
               <a href="#services" className="text-brand-muted hover:text-brand-text transition-colors font-medium">Services</a>
               <a href="#portfolio" className="text-brand-muted hover:text-brand-text transition-colors font-medium">Portfolio</a>
               <Link to="/auth">
-                <Button className="bg-gradient-to-r from-brand-primary to-red-600 hover:from-brand-primary/90 hover:to-red-600/90 text-white rounded-full px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
+                <Button className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 text-white rounded-full px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
                   Get Started
                 </Button>
               </Link>
@@ -172,7 +172,7 @@ export default function Index() {
               { step: "5", title: "Get Quote", desc: "Instant pricing with 5% advance", icon: <Calculator className="h-8 w-8" /> }
             ].map((item, index) => (
               <div key={index} className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-primary to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform shadow-xl">
+                <div className="w-20 h-20 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform shadow-xl">
                   {typeof item.icon === 'string' ? item.icon : item.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
@@ -183,7 +183,7 @@ export default function Index() {
 
           <div className="text-center">
             <Link to="/auth">
-              <Button className="bg-gradient-to-r from-brand-primary to-red-600 hover:from-brand-primary/90 hover:to-red-600/90 text-white px-12 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all">
+              <Button className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 text-white px-12 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all">
                 Begin Your Design Journey
               </Button>
             </Link>
