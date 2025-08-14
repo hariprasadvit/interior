@@ -176,7 +176,14 @@ export default function Wizard() {
       total: 500000
     };
     setState(prev => ({ ...prev, quote }));
-    navigate("/quote");
+    localStorage.setItem("userSelections", JSON.stringify({
+      bhkType: state.bhkType,
+      houseStyle: state.houseStyle,
+      living: state.living,
+      kitchen: state.kitchen,
+      bedroom: state.bedroom
+    }));
+    navigate("/payment");
   };
 
   const isStepComplete = () => {
