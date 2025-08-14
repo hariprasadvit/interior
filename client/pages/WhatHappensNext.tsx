@@ -120,16 +120,29 @@ export default function WhatHappensNext() {
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <div className="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Clock className="h-10 w-10 text-blue-600" />
+          <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <Clock className="h-10 w-10 text-indigo-600" />
           </div>
           <h1 className="text-4xl font-bold text-brand-text mb-4">What Happens Next?</h1>
           <p className="text-lg text-brand-muted max-w-2xl mx-auto mb-6">
             Here's your complete project timeline from design to handover
           </p>
-          <div className="inline-flex items-center space-x-2 bg-blue-100 px-4 py-2 rounded-full">
-            <Clock className="h-4 w-4 text-blue-600" />
-            <span className="text-blue-800 font-semibold">Total Timeline: {totalTimelineWeeks}</span>
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-100 to-purple-100 px-4 py-2 rounded-full mb-8">
+            <Clock className="h-4 w-4 text-indigo-600" />
+            <span className="text-indigo-800 font-semibold">Total Timeline: {totalTimelineWeeks}</span>
+          </div>
+
+          {/* Premium CTA at top */}
+          <div className="mb-8">
+            <Button
+              className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
+              onClick={() => window.location.href = "/"}
+            >
+              Return to Homepage
+            </Button>
+            <p className="text-sm text-brand-muted mt-3">
+              Our team will contact you within 24 hours
+            </p>
           </div>
         </div>
 
