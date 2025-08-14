@@ -273,7 +273,7 @@ export default function Wizard() {
               <Button
                 onClick={() => handleNext(4)}
                 disabled={!isStepComplete()}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 disabled:opacity-50"
+                className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-3 disabled:opacity-50 shadow-lg transition-all"
               >
                 Next: Kitchen Design
               </Button>
@@ -309,7 +309,7 @@ export default function Wizard() {
               <Button
                 onClick={() => handleNext(5)}
                 disabled={!isStepComplete()}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 disabled:opacity-50"
+                className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-3 disabled:opacity-50 shadow-lg transition-all"
               >
                 Next: Bedroom Design
               </Button>
@@ -345,7 +345,7 @@ export default function Wizard() {
               <Button
                 onClick={() => handleNext(6)}
                 disabled={!isStepComplete()}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-3 disabled:opacity-50"
+                className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-3 disabled:opacity-50 shadow-lg transition-all"
               >
                 Upload Floor Plan
               </Button>
@@ -420,7 +420,7 @@ export default function Wizard() {
                 <Button
                   onClick={generateQuote}
                   disabled={!state.floorPlanUrl}
-                  className="w-full bg-brand-primary hover:bg-brand-primary/90 text-white py-4 text-lg font-semibold rounded-xl disabled:opacity-50"
+                  className="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 text-white py-4 text-lg font-semibold rounded-xl disabled:opacity-50 shadow-lg transition-all"
                 >
                   Continue to Summary
                 </Button>
