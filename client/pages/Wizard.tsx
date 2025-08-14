@@ -226,7 +226,27 @@ export default function Wizard() {
       </div>
 
       <ProgressSteps steps={steps} current={state.step} />
-      
+
+      {/* Navigation for BHK and Style steps - moved to top */}
+      {(state.step === 1 || state.step === 2) && (
+        <div className="max-w-7xl mx-auto px-6 pb-8">
+          <div className="flex justify-center space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl max-w-3xl mx-auto">
+            {state.step === 2 && (
+              <Button variant="outline" onClick={() => handleBack(1)} className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50">
+                Back to BHK Type
+              </Button>
+            )}
+            <Button
+              onClick={() => handleNext(state.step + 1)}
+              disabled={!isStepComplete()}
+              className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 text-white px-12 py-4 text-lg rounded-xl disabled:opacity-50 shadow-lg transition-all"
+            >
+              {state.step === 1 ? "Choose Design Style" : "Start Room Customization"}
+            </Button>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto px-6 pb-12">
         {/* Step 1: BHK Type Selection */}
         {state.step === 1 && (
