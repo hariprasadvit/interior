@@ -52,7 +52,7 @@ export default function Index() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/auth">
-                  <Button className="bg-gradient-to-r from-brand-primary to-red-600 hover:from-brand-primary/90 hover:to-red-600/90 text-white px-10 py-4 text-lg rounded-full group shadow-xl hover:shadow-2xl transition-all">
+                  <Button className="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 hover:from-violet-700 hover:via-purple-700 hover:to-blue-700 text-white px-10 py-4 text-lg rounded-full group shadow-xl hover:shadow-2xl transition-all">
                     Start Your Journey
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
