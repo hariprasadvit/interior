@@ -103,35 +103,35 @@ export default function Wizard() {
   ];
 
   const bedroomFields = [
-    { 
-      name: "flooring", 
-      label: "Floor Material", 
-      options: getFilteredMaterials("flooring", "bedroom", ["Wood Laminate", "Vitrified Tile", "Engineered Wood"]),
-      type: "material" as const 
+    {
+      name: "flooring",
+      label: "Floor Material",
+      options: ["Wood Laminate", "Vitrified Tile", "Engineered Wood"],
+      type: "material" as const
     },
-    { 
-      name: "bedroomPaint", 
-      label: "Wall Paint", 
-      options: getFilteredMaterials("bedroomPaint", "bedroom", ["Calming Blue", "Warm Taupe", "Ivory"]),
-      type: "color" as const 
+    {
+      name: "bedroomPaint",
+      label: "Wall Paint",
+      options: ["Calming Blue", "Warm Taupe", "Ivory"],
+      type: "color" as const
     },
-    { 
-      name: "wardrobe", 
-      label: "Wardrobe Finish", 
+    {
+      name: "wardrobe",
+      label: "Wardrobe Finish",
       options: ["Matte Laminate", "High-Gloss Laminate", "Veneer"],
-      type: "material" as const 
+      type: "material" as const
     },
-    { 
-      name: "lighting", 
-      label: "Lighting Style", 
+    {
+      name: "lighting",
+      label: "Lighting Style",
       options: ["Warm Recessed", "Pendant", "Cove"],
-      type: "style" as const 
+      type: "style" as const
     },
-    { 
-      name: "bed", 
-      label: "Bed Type", 
+    {
+      name: "bed",
+      label: "Bed Type",
       options: ["Platform Bed", "Storage Bed", "Four Poster"],
-      type: "style" as const 
+      type: "style" as const
     }
   ];
 
