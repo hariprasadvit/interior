@@ -265,7 +265,7 @@ export const imageMap = {
 
 // Reliable fallback images for each room type with proper Unsplash URLs
 const defaultImages = {
-  "living": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
+  "living": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F2ac1102c4fa24711a900a4819cabe664?format=webp&width=800",
   "kitchen": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
   "bedroom": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
 };
