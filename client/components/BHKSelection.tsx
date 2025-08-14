@@ -61,6 +61,16 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
           </p>
         </div>
 
+        {/* Navigation CTA at top */}
+        {selected && (
+          <div className="text-center mb-12">
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl max-w-2xl mx-auto">
+              <div className="text-xl font-bold text-indigo-800 mb-4">Ready to choose your design style?</div>
+              <p className="text-indigo-600 mb-6">Your {selected} apartment is selected. Let's pick the perfect style!</p>
+            </div>
+          </div>
+        )}
+
         {/* BHK Options Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {bhkOptions.map((option) => (
@@ -69,7 +79,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
               onClick={() => onSelect(option.type)}
               className={`group relative overflow-hidden rounded-3xl transition-all duration-500 transform hover:scale-105 ${
                 selected === option.type
-                  ? "ring-4 ring-brand-primary shadow-2xl scale-105"
+                  ? "ring-4 ring-indigo-600 shadow-2xl scale-105"
                   : "hover:shadow-xl"
               }`}
             >
@@ -99,7 +109,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-2xl font-bold text-brand-text">{option.title}</h3>
                     {selected === option.type && (
-                      <div className="w-8 h-8 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-8 h-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                         <span className="text-white text-sm">✓</span>
                       </div>
                     )}
@@ -123,7 +133,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
                   <div className="space-y-2 mb-6">
                     {option.features.map((feature, index) => (
                       <div key={index} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-brand-primary rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
                         <span className="text-sm text-brand-text">{feature}</span>
                       </div>
                     ))}
@@ -132,7 +142,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
                   {/* Price */}
                   <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <div>
-                      <span className="text-lg font-bold text-brand-primary">{option.price}</span>
+                      <span className="text-lg font-bold text-indigo-600">{option.price}</span>
                       <p className="text-xs text-brand-muted">Estimated range</p>
                     </div>
                     <div className="text-right">
@@ -148,11 +158,11 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
 
               {/* Selection Overlay */}
               {selected === option.type && (
-                <div className="absolute inset-0 bg-brand-primary/10 pointer-events-none" />
+                <div className="absolute inset-0 bg-indigo-600/10 pointer-events-none" />
               )}
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </button>
           ))}
         </div>
