@@ -99,7 +99,7 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-2xl font-bold text-brand-text">{option.title}</h3>
                     {selected === option.type && (
-                      <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-8 h-8 bg-gradient-to-r from-violet-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                         <span className="text-white text-sm">✓</span>
                       </div>
                     )}
