@@ -14,7 +14,7 @@ export const imageMap = {
         "Soft Beige": "https://images.unsplash.com/photo-1590018824225-48d36dee2126?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Cool Grey": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // IKEA Three-Seat Sofas - Actual IKEA sofa style images
-        "KIVIK Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "KIVIK Sofa": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F2ac1102c4fa24711a900a4819cabe664?format=webp&width=800",
         "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "GLOSTAD Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Carpet - Closeup rug texture images
