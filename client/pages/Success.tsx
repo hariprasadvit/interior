@@ -72,9 +72,9 @@ export default function Success() {
           <div className="bg-gradient-to-r from-brand-primary/10 to-green-100 rounded-3xl p-8 mb-12 max-w-2xl mx-auto shadow-lg">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="text-center">
-                <Award className="h-8 w-8 text-brand-primary mx-auto mb-2" />
+                <Award className="h-8 w-8 text-indigo-600 mx-auto mb-2" />
                 <p className="text-brand-muted mb-2">Booking Reference</p>
-                <p className="text-2xl font-bold text-brand-primary font-mono">#{bookingId}</p>
+                <p className="text-2xl font-bold text-indigo-600 font-mono">#{bookingId}</p>
               </div>
               <div className="text-center">
                 <Star className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
@@ -87,7 +87,7 @@ export default function Success() {
           {/* Quick Actions */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link to="/quote">
-              <Button className="bg-brand-primary hover:bg-brand-primary/90 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all">
+              <Button className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all">
                 <Eye className="mr-2 h-5 w-5" />
                 View My Quote
               </Button>
@@ -287,15 +287,15 @@ export default function Success() {
 
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-brand-primary" />
+                  <Phone className="h-5 w-5 text-indigo-600" />
                   <span className="text-brand-text">+91 9876-543-210</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-brand-primary" />
+                  <Mail className="h-5 w-5 text-indigo-600" />
                   <span className="text-brand-text">ananya@booleanbeyond.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MessageCircle className="h-5 w-5 text-brand-primary" />
+                  <MessageCircle className="h-5 w-5 text-indigo-600" />
                   <span className="text-brand-text">WhatsApp: +91 9876-543-211</span>
                 </div>
               </div>
@@ -333,7 +333,7 @@ export default function Success() {
         </div>
 
         {/* Thank You Message */}
-        <div className="text-center mt-16 p-8 bg-gradient-to-r from-brand-primary/10 via-purple-100 to-blue-100 rounded-3xl border border-gray-100">
+        <div className="text-center mt-16 p-8 bg-gradient-to-r from-indigo-600/10 via-purple-100 to-blue-100 rounded-3xl border border-gray-100">
           <h3 className="text-3xl font-bold text-brand-text mb-6">
             Thank You for Choosing InteriorFlow
           </h3>
