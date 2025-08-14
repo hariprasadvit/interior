@@ -45,7 +45,7 @@ export default function Payment() {
           <div className="flex items-center justify-between">
             <Link to="/quote" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors">
               <ArrowLeft className="h-5 w-5" />
-              <span className="text-2xl font-bold">Boolean & Beyond</span>
+              <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
             <div className="flex items-center space-x-2 text-sm text-brand-muted">
               <CheckCircle className="h-4 w-4" />
