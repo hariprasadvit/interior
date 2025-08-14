@@ -192,19 +192,6 @@ export default function Payment() {
               </div>
             </div>
 
-            {/* Proceed Button */}
-            <div className="text-center pt-6">
-              <Button
-                onClick={handleProceed}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-12 py-4 text-lg font-semibold rounded-xl flex items-center space-x-3 mx-auto"
-              >
-                <span>Proceed to Next Steps</span>
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-              <p className="text-sm text-brand-muted mt-3">
-                Learn about our process and timeline
-              </p>
-            </div>
           </CardContent>
         </Card>
       </div>
