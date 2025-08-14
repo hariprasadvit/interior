@@ -57,11 +57,21 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Navigation CTA at top */}
+        {selected && (
+          <div className="text-center mb-12">
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl max-w-2xl mx-auto">
+              <div className="text-xl font-bold text-indigo-800 mb-4">Perfect! Your style is selected</div>
+              <p className="text-indigo-600 mb-6">Now let's start customizing your {bhkType} {selected} home room by room</p>
+            </div>
+          </div>
+        )}
+
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-brand-primary/10 px-4 py-2 rounded-full mb-6">
-            <span className="text-brand-primary font-medium">{bhkType} Selected</span>
-            <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
+          <div className="inline-flex items-center space-x-2 bg-indigo-600/10 px-4 py-2 rounded-full mb-6">
+            <span className="text-indigo-600 font-medium">{bhkType} Selected</span>
+            <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-brand-text mb-6">
             Choose Your Design Style
@@ -79,7 +89,7 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
               onClick={() => onSelect(style.value)}
               className={`group relative overflow-hidden rounded-3xl transition-all duration-500 transform hover:scale-105 ${
                 selected === style.value
-                  ? "ring-4 ring-brand-primary shadow-2xl scale-105"
+                  ? "ring-4 ring-indigo-600 shadow-2xl scale-105"
                   : "hover:shadow-xl"
               }`}
             >
@@ -101,7 +111,7 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
 
                   {/* Selection Indicator */}
                   {selected === style.value && (
-                    <div className="absolute top-4 left-4 w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center">
+                    <div className="absolute top-4 left-4 w-8 h-8 bg-indigo-600 rounded-full flex items-center justify-center">
                       <span className="text-white text-sm">✓</span>
                     </div>
                   )}
@@ -134,7 +144,7 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
                   <div className="space-y-1">
                     {style.characteristics.slice(0, 2).map((char, index) => (
                       <div key={index} className="flex items-center space-x-2">
-                        <div className="w-1 h-1 bg-brand-primary rounded-full"></div>
+                        <div className="w-1 h-1 bg-indigo-600 rounded-full"></div>
                         <span className="text-xs text-brand-text">{char}</span>
                       </div>
                     ))}
@@ -144,11 +154,11 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
 
               {/* Selection Overlay */}
               {selected === style.value && (
-                <div className="absolute inset-0 bg-brand-primary/10 pointer-events-none" />
+                <div className="absolute inset-0 bg-indigo-600/10 pointer-events-none" />
               )}
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </button>
           ))}
         </div>
@@ -171,7 +181,7 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
                     <div className="grid grid-cols-2 gap-2">
                       {styleOptions.find(s => s.value === selected)?.characteristics.map((char, index) => (
                         <div key={index} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-brand-primary rounded-full"></div>
+                          <div className="w-2 h-2 bg-indigo-600 rounded-full"></div>
                           <span className="text-sm text-brand-text">{char}</span>
                         </div>
                       ))}
