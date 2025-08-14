@@ -188,22 +188,22 @@ export default function Quote() {
                 <div className="space-y-3 text-sm text-brand-muted">
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Secures your design consultation</span>
+                    <span>Complete design consultation included</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>Adjusted in final payment</span>
+                    <span>Professional installation team</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <CheckCircle className="h-4 w-4 text-green-500" />
-                    <span>100% refundable if we can't proceed</span>
+                    <span>1-year quality warranty</span>
                   </div>
                 </div>
 
                 <div className="bg-blue-50 p-4 rounded-xl">
                   <p className="text-sm text-blue-800">
-                    💡 <strong>Pro tip:</strong> Advance payment holders get priority scheduling 
-                    and exclusive access to premium material options.
+                    💡 <strong>Next Step:</strong> Our senior designer will call you within 24 hours
+                    to begin your project journey.
                   </p>
                 </div>
               </CardContent>
