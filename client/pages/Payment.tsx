@@ -56,14 +56,28 @@ export default function Payment() {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <div className="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="h-10 w-10 text-green-600" />
+        <div className="text-center mb-8">
+          <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <CheckCircle className="h-10 w-10 text-emerald-600" />
           </div>
           <h1 className="text-4xl font-bold text-brand-text mb-4">Your Design is Ready!</h1>
-          <p className="text-lg text-brand-muted max-w-2xl mx-auto">
+          <p className="text-lg text-brand-muted max-w-2xl mx-auto mb-8">
             Review your complete interior design selections below
           </p>
+
+          {/* Premium CTA at top */}
+          <div className="mb-8">
+            <Button
+              onClick={handleProceed}
+              className="bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 hover:from-violet-700 hover:via-purple-700 hover:to-blue-700 text-white px-12 py-4 text-lg font-semibold rounded-xl flex items-center space-x-3 mx-auto shadow-lg hover:shadow-xl transition-all"
+            >
+              <span>Proceed to Next Steps</span>
+              <ArrowRight className="h-5 w-5" />
+            </Button>
+            <p className="text-sm text-brand-muted mt-3">
+              Learn about our process and timeline
+            </p>
+          </div>
         </div>
 
         {/* Design Summary Card */}
