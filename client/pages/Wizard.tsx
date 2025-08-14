@@ -199,7 +199,7 @@ export default function Wizard() {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors">
               <ArrowLeft className="h-5 w-5" />
-              <span className="text-2xl font-bold">Boolean & Beyond</span>
+              <span className="text-2xl font-bold">InteriorFlow</span>
             </Link>
             <div className="flex items-center space-x-4">
               {state.bhkType && (
