@@ -104,7 +104,7 @@ export default function Auth() {
                 <Button
                   onClick={handleSendOTP}
                   disabled={!identifier.trim()}
-                  className="w-full h-14 bg-gradient-to-r from-brand-primary to-red-600 hover:from-brand-primary/90 hover:to-red-600/90 text-white text-lg font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transition-all"
+                  className="w-full h-14 bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 hover:from-violet-700 hover:via-purple-700 hover:to-blue-700 text-white text-lg font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transition-all"
                 >
                   Send Verification Code
                 </Button>
