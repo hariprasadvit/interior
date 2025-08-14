@@ -116,7 +116,7 @@ export default function OTP() {
               </div>
               <CardTitle className="text-3xl text-brand-text mb-3 font-bold">Verify Your Identity</CardTitle>
               <CardDescription className="text-lg text-brand-muted leading-relaxed">
-                Enter the 6-digit code we sent to
+                📱 <strong>Demo:</strong> Enter any 6-digit code to continue
               </CardDescription>
               <div className="mt-2 px-4 py-2 bg-brand-primary/10 rounded-lg inline-block">
                 <span className="font-semibold text-brand-primary">
