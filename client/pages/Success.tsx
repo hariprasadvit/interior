@@ -201,7 +201,7 @@ export default function Success() {
             <CardContent>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-red-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                     <span className="text-white font-bold">1</span>
                   </div>
                   <div>
@@ -275,7 +275,7 @@ export default function Success() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-                <div className="w-12 h-12 bg-gradient-to-br from-brand-primary to-red-600 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">AD</span>
                 </div>
                 <div>
