@@ -7,7 +7,7 @@ export const imageMap = {
         // Room Preview Default
         "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fdecba3a320fa4b3e91968894b5c34019?format=webp&width=800",
         // Floor Tiles - Actual tile closeup images
-        "Matte Porcelain": "https://images.unsplash.com/photo-1615874959474-d609969a20ac?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Matte Porcelain": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Glossy Ceramic": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Paint colors - Paint color swatches
@@ -28,7 +28,7 @@ export const imageMap = {
         // Kitchen countertops - Different slab materials
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Marble Carrara": "https://images.unsplash.com/photo-1615874959474-d609969a20ac?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Marble Carrara": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Wall tiles - Different tile patterns
         "Subway Gloss": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Hex Matte": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
@@ -40,7 +40,7 @@ export const imageMap = {
         // Sink styles - Different sink types
         "Single Bowl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Double Bowl": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Farmhouse": "https://images.unsplash.com/photo-1615874959474-d609969a20ac?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
+        "Farmhouse": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
       },
       "bedroom": {
         // Flooring - Different flooring types
