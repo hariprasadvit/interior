@@ -422,7 +422,7 @@ export default function Wizard() {
                   disabled={!state.floorPlanUrl}
                   className="w-full bg-brand-primary hover:bg-brand-primary/90 text-white py-4 text-lg font-semibold rounded-xl disabled:opacity-50"
                 >
-                  Generate My {state.bhkType} Quote
+                  Continue to Summary
                 </Button>
                 
                 <div className="flex justify-center">
