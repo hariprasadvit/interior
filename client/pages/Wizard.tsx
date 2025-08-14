@@ -429,7 +429,7 @@ export default function Wizard() {
                 <Button
                   onClick={generateQuote}
                   disabled={!state.floorPlanUrl}
-                  className="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 text-white py-4 text-lg font-semibold rounded-xl disabled:opacity-50 shadow-lg transition-all"
+                  className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 text-white py-4 text-lg font-semibold rounded-xl disabled:opacity-50 shadow-lg transition-all"
                 >
                   Continue to Summary
                 </Button>
