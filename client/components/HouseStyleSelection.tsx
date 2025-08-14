@@ -57,16 +57,6 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Navigation CTA at top */}
-        {selected && (
-          <div className="text-center mb-12">
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl max-w-2xl mx-auto">
-              <div className="text-xl font-bold text-indigo-800 mb-4">Perfect! Your style is selected</div>
-              <p className="text-indigo-600 mb-6">Now let's start customizing your {bhkType} {selected} home room by room</p>
-            </div>
-          </div>
-        )}
-
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-indigo-600/10 px-4 py-2 rounded-full mb-6">
