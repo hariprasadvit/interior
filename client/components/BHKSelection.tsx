@@ -61,16 +61,6 @@ export function BHKSelection({ selected, onSelect }: BHKSelectionProps) {
           </p>
         </div>
 
-        {/* Navigation CTA at top */}
-        {selected && (
-          <div className="text-center mb-12">
-            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl max-w-2xl mx-auto">
-              <div className="text-xl font-bold text-indigo-800 mb-4">Ready to choose your design style?</div>
-              <p className="text-indigo-600 mb-6">Your {selected} apartment is selected. Let's pick the perfect style!</p>
-            </div>
-          </div>
-        )}
-
         {/* BHK Options Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {bhkOptions.map((option) => (
