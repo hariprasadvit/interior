@@ -45,6 +45,8 @@ export const imageMap = {
         "Farmhouse": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         // Flooring - Different flooring types
         "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Vitrified Tile": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
