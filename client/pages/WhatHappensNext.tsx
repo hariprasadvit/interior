@@ -213,11 +213,11 @@ export default function WhatHappensNext() {
               <div className="grid md:grid-cols-2 gap-4 text-left">
                 <div className="bg-white/10 p-4 rounded-lg">
                   <h4 className="font-semibold mb-2">📞 Quick Support</h4>
-                  <p className="text-sm text-red-50">Call us at +91-98765-43210 for any immediate questions</p>
+                  <p className="text-sm text-purple-100">Call us at +91-98765-43210 for any immediate questions</p>
                 </div>
                 <div className="bg-white/10 p-4 rounded-lg">
                   <h4 className="font-semibold mb-2">📧 Stay Updated</h4>
-                  <p className="text-sm text-red-50">Receive regular updates on your project progress via email</p>
+                  <p className="text-sm text-purple-100">Receive regular updates on your project progress via email</p>
                 </div>
               </div>
             </div>
