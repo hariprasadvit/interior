@@ -406,10 +406,10 @@ export default function Wizard() {
                   <div className="flex items-start space-x-3">
                     <FileText className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-semibold text-blue-900 mb-2">Quote will include:</h4>
+                      <h4 className="font-semibold text-blue-900 mb-2">Your project includes:</h4>
                       <ul className="text-sm text-blue-800 space-y-1">
-                        <li>• Materials cost for your {state.houseStyle} {state.bhkType} design</li>
-                        <li>• Labor and installation expenses</li>
+                        <li>• Complete {state.houseStyle} {state.bhkType} design</li>
+                        <li>• Professional installation team</li>
                         <li>• Project management and consultation</li>
                         <li>• 3D visualization and design mockups</li>
                       </ul>
