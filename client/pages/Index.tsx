@@ -91,8 +91,8 @@ export default function Index() {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=600&h=600&fit=crop";
                   }}
                 />
-                <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-brand-primary to-red-600 rounded-full opacity-20"></div>
-                <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-15"></div>
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-violet-500 to-purple-600 rounded-full opacity-20"></div>
+                <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-15"></div>
               </div>
               
               {/* Floating Stats Cards */}
