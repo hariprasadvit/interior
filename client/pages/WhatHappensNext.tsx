@@ -203,10 +203,10 @@ export default function WhatHappensNext() {
         </div>
 
         {/* Call to Action */}
-        <Card className="mt-12 shadow-2xl border-0 bg-gradient-to-r from-brand-primary to-red-600">
+        <Card className="mt-12 shadow-2xl border-0 bg-gradient-to-br from-slate-800 via-purple-900 to-slate-900">
           <CardContent className="p-8 text-center text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Start Your Dream Home Journey?</h3>
-            <p className="text-lg mb-6 text-red-50">
+            <p className="text-lg mb-6 text-purple-100">
               Our team is excited to bring your vision to life. We'll be in touch within 24 hours to begin this exciting process.
             </p>
             <div className="space-y-4">
