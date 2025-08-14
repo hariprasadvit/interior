@@ -179,10 +179,10 @@ export default function Quote() {
                 </div>
 
                 <Button
-                  onClick={() => navigate("/payment")}
+                  onClick={() => navigate("/what-happens-next")}
                   className="w-full h-12 bg-brand-primary hover:bg-brand-primary/90 text-white text-lg font-semibold rounded-xl"
                 >
-                  Proceed to Payment
+                  Proceed with Project
                 </Button>
 
                 <div className="space-y-3 text-sm text-brand-muted">
