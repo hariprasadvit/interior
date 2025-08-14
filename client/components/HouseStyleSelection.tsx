@@ -59,10 +59,6 @@ export function HouseStyleSelection({ selected, onSelect, bhkType }: HouseStyleS
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-indigo-600/10 px-4 py-2 rounded-full mb-6">
-            <span className="text-indigo-600 font-medium">{bhkType} Selected</span>
-            <span className="w-2 h-2 bg-indigo-600 rounded-full"></span>
-          </div>
           <h1 className="text-5xl md:text-6xl font-bold text-brand-text mb-6">
             Choose Your Design Style
           </h1>
