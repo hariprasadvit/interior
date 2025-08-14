@@ -4,20 +4,20 @@ export const imageMap = {
   "1BHK": {
     "Modern": {
       "living": {
-        // Floor Tiles - Specific tile closeup images
+        // Floor Tiles - Actual tile closeup images
         "Matte Porcelain": "https://images.unsplash.com/photo-1615874959474-d609969a20ac?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Glossy Ceramic": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        // Paint colors - Wall paint color swatches
+        // Paint colors - Paint color swatches
         "Warm White": "https://images.unsplash.com/photo-1594736797933-d0401ba19d6d?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Greige": "https://images.unsplash.com/photo-1610801264935-79c93d7c8e07?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Soft Beige": "https://images.unsplash.com/photo-1590018824225-48d36dee2126?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Cool Grey": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        // IKEA Three-Seat Sofas - Actual IKEA sofa style images
-        "KIVIK Sofa": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2F2ac1102c4fa24711a900a4819cabe664?format=webp&width=800",
+        // IKEA Three-Seat Sofas - Individual sofa product images
+        "KIVIK Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "GLOSTAD Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        // Carpet - Closeup rug texture images
+        // Carpet - Rug texture closeups
         "Persian Rug": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Modern Geometric": "https://images.unsplash.com/photo-1604709177225-055f99402ea3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Solid Color": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
