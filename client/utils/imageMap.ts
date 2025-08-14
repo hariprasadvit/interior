@@ -95,6 +95,8 @@ export const imageMap = {
         "Marble Carrara": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
         "Vitrified Tile": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
         "Calming Blue": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-60",
@@ -118,6 +120,8 @@ export const imageMap = {
         "Farmhouse": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
         "Warm Taupe": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40",
         "Four Poster": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=40"
@@ -137,6 +141,8 @@ export const imageMap = {
         "Brushed Steel": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Engineered Wood": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30",
         "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=30"
       }
@@ -193,6 +199,8 @@ export const imageMap = {
         "Marble Carrara": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70",
         "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-70"
       }
@@ -210,6 +218,8 @@ export const imageMap = {
         "Farmhouse": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50",
         "Four Poster": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=50"
       }
@@ -225,6 +235,8 @@ export const imageMap = {
         "Granite Black": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Engineered Wood": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=40"
       }
     }
@@ -248,6 +260,8 @@ export const imageMap = {
         "Double Bowl": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Wood Laminate": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Calming Blue": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop",
         "Storage Bed": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop"
@@ -264,6 +278,8 @@ export const imageMap = {
         "Quartz White": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sat=-80"
       }
     },
@@ -278,6 +294,8 @@ export const imageMap = {
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Four Poster": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&sepia=60"
       }
     },
@@ -291,6 +309,8 @@ export const imageMap = {
         "Granite Black": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50"
       },
       "bedroom": {
+        // Room Preview Default
+        "_room_preview": "https://cdn.builder.io/api/v1/image/assets%2F1ba648a6a1694e9aa91b762fb1bf4499%2Fe35edc4eaffe4353802f0082e0ef07fa?format=webp&width=800",
         "Platform Bed": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&contrast=50"
       }
     }
