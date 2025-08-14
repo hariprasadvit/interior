@@ -11,17 +11,17 @@ export const imageMap = {
         "Glossy Ceramic": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Textured Stone": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Paint colors - Paint color swatches
-        "Warm White": "https://images.unsplash.com/photo-1594736797933-d0401ba19d6d?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Greige": "https://images.unsplash.com/photo-1610801264935-79c93d7c8e07?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Soft Beige": "https://images.unsplash.com/photo-1590018824225-48d36dee2126?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Cool Grey": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Warm White": "https://images.unsplash.com/photo-1560448204-e8207845c6d3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Greige": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Soft Beige": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Cool Grey": "https://images.unsplash.com/photo-1631679706909-1844bbd07221?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // IKEA Three-Seat Sofas - Individual sofa product images
         "KIVIK Sofa": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "EKTORP Sofa": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "GLOSTAD Sofa": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         // Carpet - Rug texture closeups
-        "Persian Rug": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
-        "Modern Geometric": "https://images.unsplash.com/photo-1604709177225-055f99402ea3?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Persian Rug": "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
+        "Modern Geometric": "https://images.unsplash.com/photo-1615971677499-5467cbab01c0?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80",
         "Solid Color": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&w=800&h=600&fit=crop&q=80"
       },
       "kitchen": {
