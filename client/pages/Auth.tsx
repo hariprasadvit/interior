@@ -43,7 +43,7 @@ export default function Auth() {
           {/* Main Auth Card */}
           <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
             <CardHeader className="text-center pb-8 px-8 pt-12">
-              <div className="w-24 h-24 bg-gradient-to-br from-brand-primary to-red-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
+              <div className="w-24 h-24 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <span className="text-4xl text-white">🏠</span>
               </div>
               <CardTitle className="text-3xl text-brand-text mb-3 font-bold">Welcome Back</CardTitle>
