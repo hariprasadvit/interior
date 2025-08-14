@@ -210,7 +210,7 @@ export default function Wizard() {
             </Link>
             <div className="flex items-center space-x-4">
               {state.bhkType && (
-                <span className="text-sm bg-brand-primary/10 text-brand-primary px-3 py-1 rounded-full">
+                <span className="text-sm bg-indigo-600/10 text-indigo-600 px-3 py-1 rounded-full">
                   {state.bhkType}
                 </span>
               )}
@@ -446,17 +446,17 @@ export default function Wizard() {
 
         {/* Navigation for BHK and Style steps */}
         {(state.step === 1 || state.step === 2) && (
-          <div className="text-center mt-12">
-            <div className="flex justify-center space-x-4">
+          <div className="mb-8">
+            <div className="flex justify-center space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl max-w-3xl mx-auto">
               {state.step === 2 && (
-                <Button variant="outline" onClick={() => handleBack(1)} className="px-8 py-3">
+                <Button variant="outline" onClick={() => handleBack(1)} className="px-8 py-3 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50">
                   Back to BHK Type
                 </Button>
               )}
               <Button
                 onClick={() => handleNext(state.step + 1)}
                 disabled={!isStepComplete()}
-                className="bg-brand-primary hover:bg-brand-primary/90 text-white px-12 py-4 text-lg rounded-full disabled:opacity-50"
+                className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 text-white px-12 py-4 text-lg rounded-xl disabled:opacity-50 shadow-lg transition-all"
               >
                 {state.step === 1 ? "Choose Design Style" : "Start Room Customization"}
               </Button>
