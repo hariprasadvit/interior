@@ -37,7 +37,7 @@ export default function Auth() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link
-              to="/"
+              to="/home"
               className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors group"
             >
               <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
