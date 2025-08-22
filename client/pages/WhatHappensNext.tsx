@@ -170,7 +170,7 @@ export default function WhatHappensNext() {
           <div className="mb-8">
             <Button
               className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
-              onClick={() => (window.location.href = "/")}
+              onClick={() => (window.location.href = "/home")}
             >
               Return to Homepage
             </Button>
