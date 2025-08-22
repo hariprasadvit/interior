@@ -123,7 +123,7 @@ export default function Success() {
               <Download className="h-5 w-5" />
               <span>Download Receipt</span>
             </Button>
-            <Link to="/">
+            <Link to="/home">
               <Button
                 variant="outline"
                 className="px-8 py-4 text-lg rounded-xl border-2 shadow-lg hover:shadow-xl transition-all"
