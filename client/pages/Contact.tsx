@@ -4,21 +4,21 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
-import {
-  ArrowLeft,
-  Phone,
-  MapPin,
-  Mail,
+import { 
+  ArrowLeft, 
+  Phone, 
+  MapPin, 
+  Mail, 
   Clock,
   Send,
-  MessageCircle,
+  MessageCircle
 } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
+    message: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,12 +27,10 @@ export default function Contact() {
     console.log("Form submitted:", formData);
   };
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -43,7 +41,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link
-              to="/"
+              to="/home"
               className="flex items-center space-x-2 text-brand-text hover:text-brand-primary transition-colors"
             >
               <ArrowLeft className="h-5 w-5" />
@@ -67,8 +65,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-xl text-brand-muted max-w-3xl mx-auto">
-            Please feel free to contact us and we will get back to you as soon
-            as we can.
+            Please feel free to contact us and we will get back to you as soon as we can.
           </p>
         </div>
 
@@ -78,21 +75,15 @@ export default function Contact() {
           <Card className="shadow-2xl border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-black">
             <CardContent className="p-8">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Contact Us
-                </h2>
+                <h2 className="text-3xl font-bold text-white mb-4">Contact Us</h2>
                 <p className="text-gray-300">
-                  Please feel free to contact us and we will get back to you as
-                  soon as we can.
+                  Please feel free to contact us and we will get back to you as soon as we can.
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-white text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="name" className="block text-white text-sm font-medium mb-2">
                     Name
                   </label>
                   <Input
@@ -108,10 +99,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-white text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="email" className="block text-white text-sm font-medium mb-2">
                     Email
                   </label>
                   <Input
@@ -127,10 +115,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-white text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="message" className="block text-white text-sm font-medium mb-2">
                     Message
                   </label>
                   <Textarea
@@ -159,20 +144,15 @@ export default function Contact() {
                   <div>
                     <h4 className="text-white font-semibold mb-2">Visit Us</h4>
                     <p className="text-gray-300 text-sm">
-                      Door no 389, 1st Main Rd
-                      <br />
-                      Nehru Nagar, Kottivakkam
-                      <br />
+                      Door no 389, 1st Main Rd<br />
+                      Nehru Nagar, Kottivakkam<br />
                       Chennai, Tamil Nadu 600041
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-2">
-                      Talk to Us
-                    </h4>
+                    <h4 className="text-white font-semibold mb-2">Talk to Us</h4>
                     <p className="text-gray-300 text-sm">
-                      +91 087545 75637
-                      <br />
+                      +91 087545 75637<br />
                       support@interiorflow.com
                     </p>
                   </div>
@@ -201,12 +181,9 @@ export default function Contact() {
           <Card className="shadow-2xl border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-black">
             <CardContent className="p-8">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Contact Us
-                </h2>
+                <h2 className="text-3xl font-bold text-white mb-4">Contact Us</h2>
                 <p className="text-gray-300">
-                  Please feel free to contact us and we will get back to you as
-                  soon as we can.
+                  Please feel free to contact us and we will get back to you as soon as we can.
                 </p>
               </div>
 
@@ -217,14 +194,10 @@ export default function Contact() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">
-                      Visit Us
-                    </h3>
+                    <h3 className="text-white font-semibold text-lg mb-2">Visit Us</h3>
                     <p className="text-gray-300 leading-relaxed">
-                      Door no 389, 1st Main Rd
-                      <br />
-                      Nehru Nagar, Kottivakkam
-                      <br />
+                      Door no 389, 1st Main Rd<br />
+                      Nehru Nagar, Kottivakkam<br />
                       Chennai, Tamil Nadu 600041
                     </p>
                   </div>
@@ -236,12 +209,9 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">
-                      Talk to Us
-                    </h3>
+                    <h3 className="text-white font-semibold text-lg mb-2">Talk to Us</h3>
                     <p className="text-gray-300">
-                      +91 087545 75637
-                      <br />
+                      +91 087545 75637<br />
                       support@interiorflow.com
                     </p>
                   </div>
@@ -253,14 +223,10 @@ export default function Contact() {
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">
-                      Business Hours
-                    </h3>
+                    <h3 className="text-white font-semibold text-lg mb-2">Business Hours</h3>
                     <p className="text-gray-300">
-                      Monday - Friday: 9:00 AM - 6:00 PM
-                      <br />
-                      Saturday: 10:00 AM - 4:00 PM
-                      <br />
+                      Monday - Friday: 9:00 AM - 6:00 PM<br />
+                      Saturday: 10:00 AM - 4:00 PM<br />
                       Sunday: Closed
                     </p>
                   </div>
@@ -272,14 +238,10 @@ export default function Contact() {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg mb-2">
-                      Email Us
-                    </h3>
+                    <h3 className="text-white font-semibold text-lg mb-2">Email Us</h3>
                     <p className="text-gray-300">
-                      General Inquiries: info@interiorflow.com
-                      <br />
-                      Support: support@interiorflow.com
-                      <br />
+                      General Inquiries: info@interiorflow.com<br />
+                      Support: support@interiorflow.com<br />
                       Career: careers@interiorflow.com
                     </p>
                   </div>
@@ -329,13 +291,12 @@ export default function Contact() {
                 Ready to Transform Your Space?
               </h3>
               <p className="text-lg text-purple-100 mb-6 max-w-2xl mx-auto">
-                Get started with your dream interior design project today. Our
-                expert team is ready to bring your vision to life.
+                Get started with your dream interior design project today. Our expert team is ready to bring your vision to life.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   className="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold rounded-xl shadow-lg transition-all"
-                  onClick={() => (window.location.href = "tel:+91087545756370")}
+                  onClick={() => window.location.href = "tel:+91087545756370"}
                 >
                   <Phone className="h-5 w-5 mr-2" />
                   Call Now
